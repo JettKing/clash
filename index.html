@@ -775,7 +775,9 @@ function checkInnerBrowser(){
 
     if(isWechat || isQQ){
 
-        // 禁止滚动
+        /*
+        真正锁死页面
+        */
 
         document.body.style.overflow =
         "hidden";
@@ -783,7 +785,29 @@ function checkInnerBrowser(){
         document.documentElement.style.overflow =
         "hidden";
 
-        // 添加遮罩
+        document.body.style.height =
+        "100vh";
+
+        document.documentElement.style.height =
+        "100vh";
+
+        /*
+        禁止 iPhone 滑动
+        */
+
+        document.addEventListener(
+            "touchmove",
+            function(e){
+
+                e.preventDefault();
+
+            },
+            { passive:false }
+        );
+
+        /*
+        添加遮罩
+        */
 
         document.body.innerHTML += `
 
@@ -828,18 +852,34 @@ function checkInnerBrowser(){
         </div>
         `;
 
-        // 样式
+        /*
+        样式
+        */
 
         const style =
         document.createElement("style");
 
         style.innerHTML = `
 
+        html,
+        body{
+
+            overscroll-behavior:none;
+
+            touch-action:none;
+        }
+
         #browserMask{
 
             position:fixed;
 
             inset:0;
+
+            width:100vw;
+
+            height:100vh;
+
+            overflow:hidden;
 
             background:
             rgba(0,0,0,.45);
