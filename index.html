@@ -394,6 +394,7 @@ body{
 
     body{
         padding:8px;
+        overflow:hidden;
     }
 
     .container{
@@ -438,30 +439,37 @@ body{
     }
 
     .system{
+
         margin-top:10px;
+
         padding:6px 12px;
+
         font-size:11px;
 
         display:flex;
+
         justify-content:center;
+
         align-items:center;
 
         width:fit-content;
 
         margin-left:auto;
+
         margin-right:auto;
     }
 
-    /* 两列布局 */
+    /* 宫格 */
 
     .grid{
+
         grid-template-columns:
         repeat(2,1fr);
 
         gap:8px;
     }
 
-    /* 关键：卡片高度 */
+    /* 核心 */
 
     .card{
 
@@ -469,7 +477,7 @@ body{
 
         border-radius:14px;
 
-        min-height:155px;
+        height:175px;
 
         display:flex;
 
@@ -503,7 +511,12 @@ body{
         color:#6b7280;
     }
 
-    /* 按钮 */
+    /* 按钮区域贴底 */
+
+    .btn-area{
+
+        margin-top:auto;
+    }
 
     .btn{
 
@@ -514,13 +527,6 @@ body{
         font-size:10px;
 
         margin-bottom:4px;
-    }
-
-    /* 让按钮区域自动贴底 */
-
-    .btn-area{
-
-        margin-top:auto;
     }
 
     .sidebar{
@@ -557,15 +563,22 @@ body{
     }
 
     .notice{
+
         margin-top:10px;
+
         padding:10px;
+
         font-size:11px;
+
         border-radius:14px;
     }
 
     .footer{
+
         font-size:10px;
+
         margin-top:10px;
+
         line-height:1.5;
     }
 }
