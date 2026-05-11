@@ -955,9 +955,9 @@ function importSub(index){
 
         scheme =
 
-        "shadowrocket://add/sub://" +
+        "clash://install-config?url=" +
 
-        btoa(item.url);
+        encodeURIComponent(item.url);
     }
 
     // Android
