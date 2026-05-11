@@ -43,7 +43,7 @@ body{
 
     border-radius:30px;
 
-    padding:22px 30px;
+    padding:18px 24px;
 
     display:flex;
 
@@ -51,7 +51,7 @@ body{
 
     align-items:center;
 
-    margin-bottom:30px;
+    margin-bottom:25px;
 
     box-shadow:
     0 10px 30px rgba(0,0,0,.05);
@@ -63,15 +63,15 @@ body{
 
     align-items:center;
 
-    gap:15px;
+    gap:12px;
 }
 
 .logo-icon{
 
-    width:50px;
-    height:50px;
+    width:42px;
+    height:42px;
 
-    border-radius:18px;
+    border-radius:14px;
 
     background:
     linear-gradient(
@@ -87,12 +87,12 @@ body{
 
     color:white;
 
-    font-size:26px;
+    font-size:20px;
 }
 
 .logo-text{
 
-    font-size:34px;
+    font-size:28px;
 
     font-weight:800;
 }
@@ -118,9 +118,9 @@ body{
     display:grid;
 
     grid-template-columns:
-    1fr 320px;
+    1fr 300px;
 
-    gap:25px;
+    gap:20px;
 }
 
 /* Hero */
@@ -129,11 +129,11 @@ body{
 
     background:white;
 
-    border-radius:32px;
+    border-radius:30px;
 
-    padding:35px;
+    padding:30px;
 
-    margin-bottom:25px;
+    margin-bottom:20px;
 
     box-shadow:
     0 10px 30px rgba(0,0,0,.05);
@@ -141,9 +141,9 @@ body{
 
 .hero h1{
 
-    font-size:62px;
+    font-size:54px;
 
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
 .hero h1 span{
@@ -164,24 +164,24 @@ body{
 
     color:#6b7280;
 
-    font-size:18px;
+    font-size:16px;
 }
 
 .system{
 
-    margin-top:22px;
+    margin-top:18px;
 
     display:inline-block;
 
     background:#f3f4f6;
 
-    padding:12px 18px;
+    padding:10px 16px;
 
     border-radius:999px;
 
     color:#2563eb;
 
-    font-size:15px;
+    font-size:14px;
 }
 
 /* 卡片 */
@@ -191,18 +191,18 @@ body{
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
+    repeat(auto-fit,minmax(180px,1fr));
 
-    gap:20px;
+    gap:15px;
 }
 
 .card{
 
     background:white;
 
-    border-radius:30px;
+    border-radius:26px;
 
-    padding:25px;
+    padding:20px;
 
     box-shadow:
     0 10px 25px rgba(0,0,0,.05);
@@ -213,30 +213,41 @@ body{
 .card:hover{
 
     transform:
-    translateY(-6px);
+    translateY(-5px);
 }
 
 .icon{
 
-    font-size:56px;
+    width:58px;
+    height:58px;
 
-    margin-bottom:18px;
+    margin-bottom:15px;
+}
+
+.icon img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
 }
 
 .card-title{
 
-    font-size:28px;
+    font-size:24px;
 
     font-weight:700;
 
-    margin-bottom:10px;
+    margin-bottom:8px;
 }
 
 .card-desc{
 
     color:#6b7280;
 
-    margin-bottom:22px;
+    font-size:14px;
+
+    margin-bottom:18px;
 }
 
 .btn{
@@ -245,17 +256,17 @@ body{
 
     border:none;
 
-    padding:14px;
+    padding:12px;
 
-    border-radius:16px;
+    border-radius:14px;
 
     color:white;
 
-    font-size:16px;
+    font-size:15px;
 
     cursor:pointer;
 
-    margin-bottom:12px;
+    margin-bottom:10px;
 
     transition:.2s;
 }
@@ -277,7 +288,7 @@ body{
     background:#e5e7eb;
 }
 
-/* 侧边栏 */
+/* 右侧 */
 
 .sidebar{
 
@@ -285,16 +296,16 @@ body{
 
     flex-direction:column;
 
-    gap:20px;
+    gap:18px;
 }
 
 .side-card{
 
     background:white;
 
-    border-radius:30px;
+    border-radius:28px;
 
-    padding:28px;
+    padding:24px;
 
     box-shadow:
     0 10px 30px rgba(0,0,0,.05);
@@ -302,11 +313,11 @@ body{
 
 .side-title{
 
-    font-size:30px;
+    font-size:26px;
 
     font-weight:700;
 
-    margin-bottom:22px;
+    margin-bottom:18px;
 }
 
 .contact{
@@ -315,45 +326,54 @@ body{
 
     align-items:center;
 
-    gap:16px;
+    gap:14px;
 
     background:#f9fafb;
 
-    padding:18px;
+    padding:16px;
 
-    border-radius:22px;
+    border-radius:18px;
 
-    margin-bottom:15px;
+    margin-bottom:12px;
 }
 
 .contact-icon{
 
-    font-size:34px;
+    width:36px;
+    height:36px;
+}
+
+.contact-icon img{
+
+    width:100%;
+    height:100%;
 }
 
 .contact-name{
 
     font-weight:700;
 
-    margin-bottom:5px;
+    margin-bottom:4px;
 }
 
 .contact-value{
 
     color:#6b7280;
+
+    font-size:13px;
 }
 
 /* 提示 */
 
 .notice{
 
-    margin-top:28px;
+    margin-top:20px;
 
     background:white;
 
-    border-radius:24px;
+    border-radius:20px;
 
-    padding:22px;
+    padding:18px;
 
     text-align:center;
 
@@ -367,16 +387,18 @@ body{
 
 .footer{
 
-    margin-top:25px;
+    margin-top:20px;
 
     text-align:center;
 
     color:#6b7280;
 
     line-height:1.8;
+
+    font-size:14px;
 }
 
-/* 手机优化 */
+/* 手机 */
 
 @media(max-width:980px){
 
@@ -392,19 +414,17 @@ body{
 
     .topbar{
 
-        padding:14px 18px;
+        padding:14px 16px;
 
         border-radius:20px;
-
-        margin-bottom:15px;
     }
 
     .logo-icon{
 
-        width:38px;
-        height:38px;
+        width:34px;
+        height:34px;
 
-        font-size:18px;
+        font-size:16px;
     }
 
     .logo-text{
@@ -414,16 +434,14 @@ body{
 
     .hero{
 
-        padding:20px;
+        padding:22px;
 
         border-radius:22px;
-
-        margin-bottom:15px;
     }
 
     .hero h1{
 
-        font-size:34px;
+        font-size:38px;
 
         line-height:1.2;
     }
@@ -434,10 +452,6 @@ body{
     }
 
     .system{
-
-        margin-top:15px;
-
-        padding:8px 14px;
 
         font-size:13px;
     }
@@ -452,14 +466,15 @@ body{
 
     .card{
 
-        padding:16px;
+        padding:15px;
 
-        border-radius:22px;
+        border-radius:20px;
     }
 
     .icon{
 
-        font-size:34px;
+        width:42px;
+        height:42px;
 
         margin-bottom:10px;
     }
@@ -467,8 +482,6 @@ body{
     .card-title{
 
         font-size:18px;
-
-        margin-bottom:5px;
     }
 
     .card-desc{
@@ -482,70 +495,24 @@ body{
 
         padding:10px;
 
-        border-radius:12px;
-
         font-size:13px;
 
-        margin-bottom:8px;
-    }
-
-    .sidebar{
-
-        margin-top:15px;
+        border-radius:12px;
     }
 
     .side-card{
 
         padding:18px;
-
-        border-radius:22px;
     }
 
     .side-title{
 
         font-size:22px;
-
-        margin-bottom:14px;
     }
 
     .contact{
 
         padding:12px;
-
-        border-radius:16px;
-    }
-
-    .contact-icon{
-
-        font-size:24px;
-    }
-
-    .contact-name{
-
-        font-size:14px;
-    }
-
-    .contact-value{
-
-        font-size:12px;
-    }
-
-    .notice{
-
-        margin-top:15px;
-
-        padding:15px;
-
-        font-size:13px;
-
-        border-radius:18px;
-    }
-
-    .footer{
-
-        font-size:12px;
-
-        margin-top:15px;
     }
 }
 
@@ -595,7 +562,7 @@ body{
 
 </div>
 
-<!-- 卡片 -->
+<!-- 线路 -->
 
 <div class="grid" id="grid"></div>
 
@@ -630,13 +597,15 @@ body{
     <div class="contact">
 
         <div class="contact-icon">
-            🐧
+
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tencentqq.svg">
+
         </div>
 
         <div>
 
             <div class="contact-name">
-                联系 QQ
+                QQ
             </div>
 
             <div class="contact-value">
@@ -652,13 +621,15 @@ body{
     <div class="contact">
 
         <div class="contact-icon">
-            💬
+
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wechat.svg">
+
         </div>
 
         <div>
 
             <div class="contact-name">
-                联系微信
+                微信
             </div>
 
             <div class="contact-value">
@@ -674,13 +645,15 @@ body{
     <div class="contact">
 
         <div class="contact-icon">
-            📧
+
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg">
+
         </div>
 
         <div>
 
             <div class="contact-name">
-                联系邮箱
+                邮箱
             </div>
 
             <div class="contact-value">
@@ -710,24 +683,44 @@ function detectSystem(){
     const ua =
     navigator.userAgent;
 
-    if(/Windows/i.test(ua)){
+    // iPhone / iPad
 
-        return "🖥 Windows";
+    if(
+
+        /iPhone|iPad|iPod/i.test(ua)
+
+        ||
+
+        (
+            navigator.platform === 'MacIntel'
+            &&
+            navigator.maxTouchPoints > 1
+        )
+
+    ){
+
+        return "📱 iPhone / iPad";
     }
 
-    if(/Macintosh|Mac OS X/i.test(ua)){
-
-        return "🍎 macOS";
-    }
+    // Android
 
     if(/Android/i.test(ua)){
 
         return "🤖 Android";
     }
 
-    if(/iPhone|iPad|iPod/i.test(ua)){
+    // Windows
 
-        return "📱 iPhone / iPad";
+    if(/Windows/i.test(ua)){
+
+        return "🖥 Windows";
+    }
+
+    // macOS
+
+    if(/Macintosh|Mac OS X/i.test(ua)){
+
+        return "🍎 macOS";
     }
 
     return "🌐 Unknown";
@@ -747,7 +740,7 @@ const subscriptions = [
 
 {
     name:"线路 1",
-    icon:"🚀",
+    icon:"rocket",
     color:"#3b82f6",
     password:"1111",
     url:"https://example.com/sub1.yaml"
@@ -755,7 +748,7 @@ const subscriptions = [
 
 {
     name:"线路 2",
-    icon:"⚡",
+    icon:"zap",
     color:"#22c55e",
     password:"2222",
     url:"https://example.com/sub2.yaml"
@@ -763,7 +756,7 @@ const subscriptions = [
 
 {
     name:"线路 3",
-    icon:"🪐",
+    icon:"planet",
     color:"#8b5cf6",
     password:"3333",
     url:"https://example.com/sub3.yaml"
@@ -771,7 +764,7 @@ const subscriptions = [
 
 {
     name:"线路 4",
-    icon:"☁️",
+    icon:"cloud",
     color:"#f59e0b",
     password:"4444",
     url:"https://example.com/sub4.yaml"
@@ -779,7 +772,7 @@ const subscriptions = [
 
 {
     name:"线路 5",
-    icon:"🛡️",
+    icon:"shield",
     color:"#06b6d4",
     password:"5555",
     url:"https://example.com/sub5.yaml"
@@ -787,10 +780,42 @@ const subscriptions = [
 
 {
     name:"线路 6",
-    icon:"📶",
+    icon:"wifi",
     color:"#ec4899",
     password:"6666",
     url:"https://example.com/sub6.yaml"
+},
+
+{
+    name:"线路 7",
+    icon:"globe",
+    color:"#3b82f6",
+    password:"7777",
+    url:"https://example.com/sub7.yaml"
+},
+
+{
+    name:"线路 8",
+    icon:"star",
+    color:"#eab308",
+    password:"8888",
+    url:"https://example.com/sub8.yaml"
+},
+
+{
+    name:"线路 9",
+    icon:"leaf",
+    color:"#84cc16",
+    password:"9999",
+    url:"https://example.com/sub9.yaml"
+},
+
+{
+    name:"线路 10",
+    icon:"gem",
+    color:"#8b5cf6",
+    password:"0000",
+    url:"https://example.com/sub10.yaml"
 }
 
 ];
@@ -818,7 +843,7 @@ function verifyPassword(item){
 
 /*
 ====================================
-生成卡片
+生成线路卡片
 ====================================
 */
 
@@ -835,7 +860,12 @@ subscriptions.forEach((item,index)=>{
     card.innerHTML = `
 
     <div class="icon">
-        ${item.icon}
+
+        <img
+        src="
+https://cdn.jsdelivr.net/gh/lucide-icons/lucide/icons/${item.icon}.svg
+        ">
+
     </div>
 
     <div class="card-title">
@@ -891,7 +921,19 @@ function importSub(index){
 
     // iPhone / iPad
 
-    if(/iPhone|iPad|iPod/i.test(ua)){
+    if(
+
+        /iPhone|iPad|iPod/i.test(ua)
+
+        ||
+
+        (
+            navigator.platform === 'MacIntel'
+            &&
+            navigator.maxTouchPoints > 1
+        )
+
+    ){
 
         scheme =
 
