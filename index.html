@@ -218,8 +218,8 @@ body{
 
 .icon{
 
-    width:58px;
-    height:58px;
+    width:60px;
+    height:60px;
 
     margin-bottom:15px;
 }
@@ -398,7 +398,7 @@ body{
     font-size:14px;
 }
 
-/* 手机 */
+/* 手机优化 */
 
 @media(max-width:980px){
 
@@ -598,7 +598,7 @@ body{
 
         <div class="contact-icon">
 
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tencentqq.svg">
+            <img src="https://img.icons8.com/color/96/qq.png">
 
         </div>
 
@@ -622,7 +622,7 @@ body{
 
         <div class="contact-icon">
 
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wechat.svg">
+            <img src="https://img.icons8.com/color/96/weixing.png">
 
         </div>
 
@@ -646,7 +646,7 @@ body{
 
         <div class="contact-icon">
 
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg">
+            <img src="https://img.icons8.com/fluency/96/mail.png">
 
         </div>
 
@@ -740,7 +740,7 @@ const subscriptions = [
 
 {
     name:"线路 1",
-    icon:"rocket",
+    icon:"https://img.icons8.com/fluency/96/rocket.png",
     color:"#3b82f6",
     password:"1111",
     url:"https://example.com/sub1.yaml"
@@ -748,7 +748,7 @@ const subscriptions = [
 
 {
     name:"线路 2",
-    icon:"zap",
+    icon:"https://img.icons8.com/fluency/96/lightning-bolt.png",
     color:"#22c55e",
     password:"2222",
     url:"https://example.com/sub2.yaml"
@@ -756,7 +756,7 @@ const subscriptions = [
 
 {
     name:"线路 3",
-    icon:"planet",
+    icon:"https://img.icons8.com/fluency/96/saturn-planet.png",
     color:"#8b5cf6",
     password:"3333",
     url:"https://example.com/sub3.yaml"
@@ -764,7 +764,7 @@ const subscriptions = [
 
 {
     name:"线路 4",
-    icon:"cloud",
+    icon:"https://img.icons8.com/fluency/96/cloud.png",
     color:"#f59e0b",
     password:"4444",
     url:"https://example.com/sub4.yaml"
@@ -772,7 +772,7 @@ const subscriptions = [
 
 {
     name:"线路 5",
-    icon:"shield",
+    icon:"https://img.icons8.com/fluency/96/shield.png",
     color:"#06b6d4",
     password:"5555",
     url:"https://example.com/sub5.yaml"
@@ -780,7 +780,7 @@ const subscriptions = [
 
 {
     name:"线路 6",
-    icon:"wifi",
+    icon:"https://img.icons8.com/fluency/96/wifi.png",
     color:"#ec4899",
     password:"6666",
     url:"https://example.com/sub6.yaml"
@@ -788,7 +788,7 @@ const subscriptions = [
 
 {
     name:"线路 7",
-    icon:"globe",
+    icon:"https://img.icons8.com/fluency/96/globe-earth.png",
     color:"#3b82f6",
     password:"7777",
     url:"https://example.com/sub7.yaml"
@@ -796,7 +796,7 @@ const subscriptions = [
 
 {
     name:"线路 8",
-    icon:"star",
+    icon:"https://img.icons8.com/fluency/96/star.png",
     color:"#eab308",
     password:"8888",
     url:"https://example.com/sub8.yaml"
@@ -804,7 +804,7 @@ const subscriptions = [
 
 {
     name:"线路 9",
-    icon:"leaf",
+    icon:"https://img.icons8.com/fluency/96/leaf.png",
     color:"#84cc16",
     password:"9999",
     url:"https://example.com/sub9.yaml"
@@ -812,7 +812,7 @@ const subscriptions = [
 
 {
     name:"线路 10",
-    icon:"gem",
+    icon:"https://img.icons8.com/fluency/96/diamond.png",
     color:"#8b5cf6",
     password:"0000",
     url:"https://example.com/sub10.yaml"
@@ -861,10 +861,7 @@ subscriptions.forEach((item,index)=>{
 
     <div class="icon">
 
-        <img
-        src="
-https://cdn.jsdelivr.net/gh/lucide-icons/lucide/icons/${item.icon}.svg
-        ">
+        <img src="${item.icon}">
 
     </div>
 
