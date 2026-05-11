@@ -83,9 +83,13 @@ body{
     justify-content:center;
     align-items:center;
 
-    color:white;
+    overflow:hidden;
+}
 
-    font-size:20px;
+.logo-icon img{
+
+    width:28px;
+    height:28px;
 }
 
 .logo-text{
@@ -421,8 +425,12 @@ body{
 
         width:34px;
         height:34px;
+    }
 
-        font-size:16px;
+    .logo-icon img{
+
+        width:22px;
+        height:22px;
     }
 
     .logo-text{
@@ -527,7 +535,9 @@ body{
     <div class="logo">
 
         <div class="logo-icon">
-            🚀
+
+            <img src="https://cdn-icons-png.flaticon.com/512/10096/10096878.png">
+
         </div>
 
         <div class="logo-text">
@@ -596,7 +606,7 @@ body{
 
         <div class="contact-icon">
 
-            <img src="icons/qq.png">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968770.png">
 
         </div>
 
@@ -620,7 +630,7 @@ body{
 
         <div class="contact-icon">
 
-            <img src="icons/wechat.png">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968847.png">
 
         </div>
 
@@ -644,7 +654,7 @@ body{
 
         <div class="contact-icon">
 
-            <img src="icons/email.png">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
 
         </div>
 
@@ -681,8 +691,6 @@ function detectSystem(){
     const ua =
     navigator.userAgent;
 
-    // iPhone / iPad
-
     if(
 
         /iPhone|iPad|iPod/i.test(ua)
@@ -700,21 +708,15 @@ function detectSystem(){
         return "📱 iPhone / iPad";
     }
 
-    // Android
-
     if(/Android/i.test(ua)){
 
         return "🤖 Android";
     }
 
-    // Windows
-
     if(/Windows/i.test(ua)){
 
         return "🖥 Windows";
     }
-
-    // macOS
 
     if(/Macintosh|Mac OS X/i.test(ua)){
 
@@ -738,7 +740,7 @@ const subscriptions = [
 
 {
     name:"线路 1",
-    icon:"icons/rocket.png",
+    icon:"https://cdn-icons-png.flaticon.com/512/10096/10096878.png",
     color:"#3b82f6",
     password:"1111",
     url:"https://example.com/sub1.yaml"
@@ -746,7 +748,7 @@ const subscriptions = [
 
 {
     name:"线路 2",
-    icon:"icons/flash.png",
+    icon:"https://cdn-icons-png.flaticon.com/512/744/744465.png",
     color:"#22c55e",
     password:"2222",
     url:"https://example.com/sub2.yaml"
@@ -754,7 +756,7 @@ const subscriptions = [
 
 {
     name:"线路 3",
-    icon:"icons/planet.png",
+    icon:"https://cdn-icons-png.flaticon.com/512/3594/3594088.png",
     color:"#8b5cf6",
     password:"3333",
     url:"https://example.com/sub3.yaml"
@@ -762,7 +764,7 @@ const subscriptions = [
 
 {
     name:"线路 4",
-    icon:"icons/cloud.png",
+    icon:"https://cdn-icons-png.flaticon.com/512/414/414927.png",
     color:"#f59e0b",
     password:"4444",
     url:"https://example.com/sub4.yaml"
@@ -770,7 +772,7 @@ const subscriptions = [
 
 {
     name:"线路 5",
-    icon:"icons/shield.png",
+    icon:"https://cdn-icons-png.flaticon.com/512/1828/1828640.png",
     color:"#06b6d4",
     password:"5555",
     url:"https://example.com/sub5.yaml"
@@ -778,7 +780,7 @@ const subscriptions = [
 
 {
     name:"线路 6",
-    icon:"icons/wifi.png",
+    icon:"https://cdn-icons-png.flaticon.com/512/483/483947.png",
     color:"#ec4899",
     password:"6666",
     url:"https://example.com/sub6.yaml"
@@ -786,7 +788,7 @@ const subscriptions = [
 
 {
     name:"线路 7",
-    icon:"icons/globe.png",
+    icon:"https://cdn-icons-png.flaticon.com/512/814/814513.png",
     color:"#3b82f6",
     password:"7777",
     url:"https://example.com/sub7.yaml"
@@ -794,7 +796,7 @@ const subscriptions = [
 
 {
     name:"线路 8",
-    icon:"icons/star.png",
+    icon:"https://cdn-icons-png.flaticon.com/512/616/616489.png",
     color:"#eab308",
     password:"8888",
     url:"https://example.com/sub8.yaml"
@@ -802,7 +804,7 @@ const subscriptions = [
 
 {
     name:"线路 9",
-    icon:"icons/leaf.png",
+    icon:"https://cdn-icons-png.flaticon.com/512/2909/2909768.png",
     color:"#84cc16",
     password:"9999",
     url:"https://example.com/sub9.yaml"
@@ -810,7 +812,7 @@ const subscriptions = [
 
 {
     name:"线路 10",
-    icon:"icons/diamond.png",
+    icon:"https://cdn-icons-png.flaticon.com/512/2583/2583344.png",
     color:"#8b5cf6",
     password:"0000",
     url:"https://example.com/sub10.yaml"
