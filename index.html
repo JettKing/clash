@@ -4,7 +4,9 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
 
 <title>Clash 一键导入</title>
 
@@ -16,8 +18,43 @@
     box-sizing:border-box;
 }
 
+:root{
+
+    --bg:#f5f7fb;
+
+    --card:#ffffff;
+
+    --text:#111827;
+
+    --sub:#6b7280;
+
+    --line:#e5e7eb;
+
+    --shadow:
+    0 10px 35px rgba(0,0,0,.05);
+}
+
+body.dark{
+
+    --bg:#0f1115;
+
+    --card:#171a21;
+
+    --text:#ffffff;
+
+    --sub:#9ca3af;
+
+    --line:#232734;
+
+    --shadow:
+    0 10px 40px rgba(0,0,0,.45);
+}
+
 body{
-    background:#f5f5f7;
+
+    background:var(--bg);
+
+    color:var(--text);
 
     font-family:
     -apple-system,
@@ -25,7 +62,7 @@ body{
     "SF Pro Display",
     sans-serif;
 
-    color:#111827;
+    transition:.25s;
 
     padding:20px;
 }
@@ -34,26 +71,30 @@ body{
 
 .topbar{
 
-    background:
-    rgba(255,255,255,.75);
+    background:rgba(255,255,255,.65);
 
-    backdrop-filter:
-    blur(20px);
+    backdrop-filter:blur(25px);
 
-    border-radius:30px;
+    border:1px solid rgba(255,255,255,.3);
+
+    border-radius:28px;
 
     padding:18px 24px;
 
     display:flex;
 
-    justify-content:space-between;
-
     align-items:center;
+
+    justify-content:space-between;
 
     margin-bottom:25px;
 
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.05);
+    box-shadow:var(--shadow);
+}
+
+body.dark .topbar{
+
+    background:rgba(23,26,33,.72);
 }
 
 .logo{
@@ -62,13 +103,13 @@ body{
 
     align-items:center;
 
-    gap:12px;
+    gap:14px;
 }
 
 .logo-icon{
 
-    width:42px;
-    height:42px;
+    width:44px;
+    height:44px;
 
     border-radius:14px;
 
@@ -86,12 +127,12 @@ body{
 
     color:white;
 
-    font-size:20px;
+    font-size:22px;
 }
 
 .logo-text{
 
-    font-size:28px;
+    font-size:30px;
 
     font-weight:800;
 }
@@ -110,6 +151,51 @@ body{
     -webkit-text-fill-color:transparent;
 }
 
+/* 深色切换 */
+
+.toggle{
+
+    width:58px;
+    height:32px;
+
+    background:#111827;
+
+    border-radius:999px;
+
+    position:relative;
+
+    cursor:pointer;
+}
+
+.toggle::before{
+
+    content:"";
+
+    width:24px;
+    height:24px;
+
+    background:white;
+
+    border-radius:50%;
+
+    position:absolute;
+
+    top:4px;
+    left:4px;
+
+    transition:.25s;
+}
+
+body.dark .toggle{
+
+    background:#4f46e5;
+}
+
+body.dark .toggle::before{
+
+    left:30px;
+}
+
 /* 布局 */
 
 .container{
@@ -117,7 +203,7 @@ body{
     display:grid;
 
     grid-template-columns:
-    1fr 300px;
+    1fr 320px;
 
     gap:20px;
 }
@@ -126,23 +212,38 @@ body{
 
 .hero{
 
-    background:white;
+    background:var(--card);
 
-    border-radius:30px;
+    border-radius:32px;
 
-    padding:30px;
+    padding:34px;
+
+    box-shadow:var(--shadow);
 
     margin-bottom:20px;
+}
 
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.05);
+.hero-wrap{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.hero-left{
+
+    flex:1;
 }
 
 .hero h1{
 
-    font-size:54px;
+    font-size:64px;
 
-    margin-bottom:10px;
+    line-height:1.1;
+
+    margin-bottom:12px;
 }
 
 .hero h1 span{
@@ -161,50 +262,115 @@ body{
 
 .hero p{
 
-    color:#6b7280;
+    color:var(--sub);
 
-    font-size:16px;
+    font-size:18px;
+
+    margin-bottom:18px;
 }
 
-.system{
+.tags{
 
-    margin-top:18px;
+    display:flex;
 
-    display:inline-block;
+    flex-wrap:wrap;
+
+    gap:10px;
+}
+
+.tag{
 
     background:#f3f4f6;
 
-    padding:10px 16px;
+    padding:10px 14px;
 
     border-radius:999px;
-
-    color:#2563eb;
 
     font-size:14px;
 }
 
-/* 卡片 */
+body.dark .tag{
+
+    background:#202531;
+}
+
+/* 系统卡片 */
+
+.system-card{
+
+    width:320px;
+
+    background:linear-gradient(
+    135deg,
+    #ffffff,
+    #f3f4f6
+    );
+
+    border-radius:28px;
+
+    padding:24px;
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+}
+
+body.dark .system-card{
+
+    background:#1d2330;
+}
+
+.system-icon{
+
+    width:64px;
+    height:64px;
+}
+
+.system-icon img{
+
+    width:100%;
+    height:100%;
+}
+
+.system-text small{
+
+    color:var(--sub);
+}
+
+.system-text h3{
+
+    margin:5px 0;
+
+    font-size:30px;
+}
+
+/* 线路 */
 
 .grid{
 
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(180px,1fr));
+    repeat(auto-fit,minmax(190px,1fr));
 
-    gap:15px;
+    gap:16px;
 }
 
 .card{
 
-    background:white;
+    background:var(--card);
 
-    border-radius:26px;
+    border-radius:28px;
 
-    padding:20px;
+    padding:22px;
 
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.05);
+    position:relative;
+
+    box-shadow:var(--shadow);
 
     transition:.25s;
 }
@@ -212,15 +378,39 @@ body{
 .card:hover{
 
     transform:
-    translateY(-5px);
+    translateY(-6px);
+}
+
+.number{
+
+    position:absolute;
+
+    top:14px;
+    left:14px;
+
+    width:28px;
+    height:28px;
+
+    border-radius:50%;
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
 }
 
 .icon{
 
-    width:60px;
-    height:60px;
+    width:72px;
+    height:72px;
 
-    margin-bottom:15px;
+    margin:20px auto 15px;
 }
 
 .icon img{
@@ -233,16 +423,20 @@ body{
 
 .card-title{
 
-    font-size:24px;
+    text-align:center;
 
-    font-weight:700;
+    font-size:28px;
 
-    margin-bottom:8px;
+    font-weight:800;
+
+    margin-bottom:6px;
 }
 
 .card-desc{
 
-    color:#6b7280;
+    text-align:center;
+
+    color:var(--sub);
 
     font-size:14px;
 
@@ -255,13 +449,15 @@ body{
 
     border:none;
 
-    padding:12px;
+    border-radius:16px;
 
-    border-radius:14px;
+    padding:13px;
 
     color:white;
 
     font-size:15px;
+
+    font-weight:700;
 
     cursor:pointer;
 
@@ -272,19 +468,19 @@ body{
 
 .btn:hover{
 
-    opacity:.92;
+    transform:scale(.98);
 }
 
 .copy{
 
     background:#f3f4f6;
 
-    color:#111827;
+    color:var(--text);
 }
 
-.copy:hover{
+body.dark .copy{
 
-    background:#e5e7eb;
+    background:#202531;
 }
 
 /* 右侧 */
@@ -300,23 +496,29 @@ body{
 
 .side-card{
 
-    background:white;
+    background:var(--card);
 
-    border-radius:28px;
+    border-radius:30px;
 
     padding:24px;
 
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.05);
+    box-shadow:var(--shadow);
 }
 
 .side-title{
 
-    font-size:26px;
+    font-size:34px;
 
-    font-weight:700;
+    font-weight:800;
 
-    margin-bottom:18px;
+    margin-bottom:8px;
+}
+
+.side-sub{
+
+    color:var(--sub);
+
+    margin-bottom:20px;
 }
 
 .contact{
@@ -325,21 +527,39 @@ body{
 
     align-items:center;
 
-    gap:14px;
+    justify-content:space-between;
+
+    gap:15px;
 
     background:#f9fafb;
 
-    padding:16px;
+    border:1px solid var(--line);
 
-    border-radius:18px;
+    padding:18px;
 
-    margin-bottom:12px;
+    border-radius:20px;
+
+    margin-bottom:14px;
+}
+
+body.dark .contact{
+
+    background:#1d2330;
+}
+
+.contact-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
 }
 
 .contact-icon{
 
-    width:36px;
-    height:36px;
+    width:42px;
+    height:42px;
 }
 
 .contact-icon img{
@@ -351,15 +571,59 @@ body{
 .contact-name{
 
     font-weight:700;
-
-    margin-bottom:4px;
 }
 
-.contact-value{
+.contact-desc{
 
-    color:#6b7280;
+    color:var(--sub);
 
     font-size:13px;
+
+    margin-top:4px;
+}
+
+.arrow{
+
+    color:#9ca3af;
+
+    font-size:20px;
+}
+
+/* 在线时间 */
+
+.online{
+
+    margin-top:10px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #eef2ff,
+    #f5f3ff
+    );
+
+    border-radius:24px;
+
+    padding:22px;
+
+    text-align:center;
+}
+
+body.dark .online{
+
+    background:#1d2330;
+}
+
+.online h3{
+
+    margin:10px 0;
+}
+
+.online p{
+
+    color:var(--sub);
+
+    font-size:14px;
 }
 
 /* 提示 */
@@ -368,7 +632,7 @@ body{
 
     margin-top:20px;
 
-    background:white;
+    background:var(--card);
 
     border-radius:20px;
 
@@ -376,10 +640,9 @@ body{
 
     text-align:center;
 
-    color:#f59e0b;
+    box-shadow:var(--shadow);
 
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.05);
+    color:#2563eb;
 }
 
 /* 页脚 */
@@ -390,14 +653,12 @@ body{
 
     text-align:center;
 
-    color:#6b7280;
+    color:var(--sub);
 
-    line-height:1.8;
-
-    font-size:14px;
+    line-height:1.9;
 }
 
-/* 手机优化 */
+/* 手机 */
 
 @media(max-width:980px){
 
@@ -411,38 +672,19 @@ body{
         grid-template-columns:1fr;
     }
 
-    .topbar{
-
-        padding:14px 16px;
-
-        border-radius:20px;
-    }
-
-    .logo-icon{
-
-        width:34px;
-        height:34px;
-
-        font-size:16px;
-    }
-
-    .logo-text{
-
-        font-size:22px;
-    }
-
     .hero{
 
-        padding:22px;
+        padding:24px;
+    }
 
-        border-radius:22px;
+    .hero-wrap{
+
+        flex-direction:column;
     }
 
     .hero h1{
 
-        font-size:38px;
-
-        line-height:1.2;
+        font-size:40px;
     }
 
     .hero p{
@@ -450,9 +692,9 @@ body{
         font-size:14px;
     }
 
-    .system{
+    .system-card{
 
-        font-size:13px;
+        width:100%;
     }
 
     .grid{
@@ -465,17 +707,17 @@ body{
 
     .card{
 
-        padding:15px;
+        padding:16px;
 
-        border-radius:20px;
+        border-radius:22px;
     }
 
     .icon{
 
-        width:42px;
-        height:42px;
+        width:50px;
+        height:50px;
 
-        margin-bottom:10px;
+        margin-top:15px;
     }
 
     .card-title{
@@ -486,8 +728,6 @@ body{
     .card-desc{
 
         font-size:12px;
-
-        margin-bottom:12px;
     }
 
     .btn{
@@ -495,23 +735,11 @@ body{
         padding:10px;
 
         font-size:13px;
-
-        border-radius:12px;
-    }
-
-    .side-card{
-
-        padding:18px;
     }
 
     .side-title{
 
-        font-size:22px;
-    }
-
-    .contact{
-
-        padding:12px;
+        font-size:26px;
     }
 }
 
@@ -537,6 +765,9 @@ body{
 
     </div>
 
+    <div class="toggle"
+    onclick="toggleDark()"></div>
+
 </div>
 
 <div class="container">
@@ -547,17 +778,68 @@ body{
 
 <div class="hero">
 
+<div class="hero-wrap">
+
+<div class="hero-left">
+
     <h1>
         <span>Clash</span> 一键导入
     </h1>
 
     <p>
-        自动识别 Windows / macOS / Android / iPhone
+        支持 Clash Verge / Mihomo / Clash for Windows 等客户端
     </p>
 
-    <div class="system" id="system">
-        正在识别系统...
+    <div class="tags">
+
+        <div class="tag">
+            🛡️ 安全稳定
+        </div>
+
+        <div class="tag">
+            ⚡ 高速节点
+        </div>
+
+        <div class="tag">
+            🔒 隐私保护
+        </div>
+
+        <div class="tag">
+            🚀 一键导入
+        </div>
+
     </div>
+
+</div>
+
+<!-- 系统 -->
+
+<div class="system-card">
+
+    <div class="system-icon">
+
+        <img id="systemIcon"
+src="https://img.icons8.com/fluency/96/mac-os.png">
+
+    </div>
+
+    <div class="system-text">
+
+        <small>当前系统</small>
+
+        <h3 id="systemName">
+            macOS
+        </h3>
+
+        <small>
+            系统已自动识别
+        </small>
+
+    </div>
+
+</div>
+
+</div>
 
 </div>
 
@@ -568,15 +850,15 @@ body{
 <!-- 提示 -->
 
 <div class="notice">
-    若无法自动拉起客户端，请复制订阅后手动导入。
+    ℹ️ 若无法自动拉起 Clash，请先复制订阅链接后手动导入。
 </div>
 
 <!-- 页脚 -->
 
 <div class="footer">
-    安全连接 · 隐私保护 · 永不记录用户信息
+    🔒 安全连接 · 隐私保护 · 永不记录用户信息
     <br>
-    Powered By GitHub Pages
+    Powered by GitHub Pages
 </div>
 
 </div>
@@ -588,29 +870,41 @@ body{
 <div class="side-card">
 
     <div class="side-title">
-        客服支持
+        在线客服
+    </div>
+
+    <div class="side-sub">
+        随时为您提供帮助
     </div>
 
     <!-- QQ -->
 
     <div class="contact">
 
-        <div class="contact-icon">
+        <div class="contact-left">
 
-            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968776.png">
+            <div class="contact-icon">
+
+<img src="https://img.icons8.com/color/96/qq.png">
+
+            </div>
+
+            <div>
+
+                <div class="contact-name">
+                    QQ
+                </div>
+
+                <div class="contact-desc">
+                    点击与我们联系
+                </div>
+
+            </div>
 
         </div>
 
-        <div>
-
-            <div class="contact-name">
-                QQ
-            </div>
-
-            <div class="contact-value">
-                123456789
-            </div>
-
+        <div class="arrow">
+            ›
         </div>
 
     </div>
@@ -619,22 +913,30 @@ body{
 
     <div class="contact">
 
-        <div class="contact-icon">
+        <div class="contact-left">
 
-            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968847.png">
+            <div class="contact-icon">
+
+<img src="https://img.icons8.com/color/96/weixing.png">
+
+            </div>
+
+            <div>
+
+                <div class="contact-name">
+                    微信
+                </div>
+
+                <div class="contact-desc">
+                    点击与我们联系
+                </div>
+
+            </div>
 
         </div>
 
-        <div>
-
-            <div class="contact-name">
-                微信
-            </div>
-
-            <div class="contact-value">
-                your_wechat
-            </div>
-
+        <div class="arrow">
+            ›
         </div>
 
     </div>
@@ -643,23 +945,51 @@ body{
 
     <div class="contact">
 
-        <div class="contact-icon">
+        <div class="contact-left">
 
-            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
+            <div class="contact-icon">
+
+<img src="https://img.icons8.com/color/96/gmail-new.png">
+
+            </div>
+
+            <div>
+
+                <div class="contact-name">
+                    Email
+                </div>
+
+                <div class="contact-desc">
+                    support@example.com
+                </div>
+
+            </div>
 
         </div>
 
-        <div>
-
-            <div class="contact-name">
-                邮箱
-            </div>
-
-            <div class="contact-value">
-                support@example.com
-            </div>
-
+        <div class="arrow">
+            ›
         </div>
+
+    </div>
+
+    <!-- 在线时间 -->
+
+    <div class="online">
+
+        🎧
+
+        <h3>
+            客服在线时间
+        </h3>
+
+        <p>
+            09:00 - 23:00 (UTC+8)
+        </p>
+
+        <p>
+            我们会尽快回复您
+        </p>
 
     </div>
 
@@ -673,6 +1003,19 @@ body{
 
 /*
 ====================================
+深色模式
+====================================
+*/
+
+function toggleDark(){
+
+    document.body
+    .classList
+    .toggle("dark");
+}
+
+/*
+====================================
 系统识别
 ====================================
 */
@@ -682,7 +1025,7 @@ function detectSystem(){
     const ua =
     navigator.userAgent;
 
-    // iPhone / iPad
+    // iPhone
 
     if(
 
@@ -698,36 +1041,62 @@ function detectSystem(){
 
     ){
 
-        return "📱 iPhone / iPad";
+        return {
+
+            name:"iPhone",
+
+            icon:
+"https://img.icons8.com/fluency/96/iphone.png"
+        };
     }
 
     // Android
 
     if(/Android/i.test(ua)){
 
-        return "🤖 Android";
+        return {
+
+            name:"Android",
+
+            icon:
+"https://img.icons8.com/fluency/96/android-os.png"
+        };
     }
 
     // Windows
 
     if(/Windows/i.test(ua)){
 
-        return "🖥 Windows";
+        return {
+
+            name:"Windows",
+
+            icon:
+"https://img.icons8.com/fluency/96/windows-11.png"
+        };
     }
 
     // macOS
 
-    if(/Macintosh|Mac OS X/i.test(ua)){
+    return {
 
-        return "🍎 macOS";
-    }
+        name:"macOS",
 
-    return "🌐 Unknown";
+        icon:
+"https://img.icons8.com/fluency/96/mac-os.png"
+    };
 }
 
-document.getElementById("system")
+const system =
+detectSystem();
+
+document.getElementById("systemName")
 .innerText =
-"当前系统：" + detectSystem();
+system.name;
+
+document.getElementById("systemIcon")
+.src =
+system.icon;
 
 /*
 ====================================
@@ -738,86 +1107,157 @@ document.getElementById("system")
 const subscriptions = [
 
 {
-    name:"线路 1",
-    icon:"https://cdn-icons-png.flaticon.com/512/3212/3212608.png",
+    name:"订阅线路 1",
+    icon:"https://img.icons8.com/3d-fluency/94/rocket.png",
     color:"#3b82f6",
     password:"1111",
     url:"https://example.com/sub1.yaml"
 },
 
 {
-    name:"线路 2",
-    icon:"https://cdn-icons-png.flaticon.com/512/3079/3079165.png",
+    name:"订阅线路 2",
+    icon:"https://img.icons8.com/3d-fluency/94/lightning-bolt.png",
     color:"#22c55e",
     password:"2222",
     url:"https://example.com/sub2.yaml"
 },
 
 {
-    name:"线路 3",
-    icon:"https://cdn-icons-png.flaticon.com/512/2909/2909763.png",
+    name:"订阅线路 3",
+    icon:"https://img.icons8.com/3d-fluency/94/planet.png",
     color:"#8b5cf6",
     password:"3333",
     url:"https://example.com/sub3.yaml"
 },
 
 {
-    name:"线路 4",
-    icon:"https://cdn-icons-png.flaticon.com/512/414/414927.png",
+    name:"订阅线路 4",
+    icon:"https://img.icons8.com/3d-fluency/94/cloud.png",
     color:"#f59e0b",
     password:"4444",
     url:"https://example.com/sub4.yaml"
 },
 
 {
-    name:"线路 5",
-    icon:"https://cdn-icons-png.flaticon.com/512/3064/3064197.png",
+    name:"订阅线路 5",
+    icon:"https://img.icons8.com/3d-fluency/94/privacy.png",
     color:"#06b6d4",
     password:"5555",
     url:"https://example.com/sub5.yaml"
 },
 
 {
-    name:"线路 6",
-    icon:"https://cdn-icons-png.flaticon.com/512/483/483947.png",
+    name:"订阅线路 6",
+    icon:"https://img.icons8.com/3d-fluency/94/wifi.png",
     color:"#ec4899",
     password:"6666",
     url:"https://example.com/sub6.yaml"
 },
 
 {
-    name:"线路 7",
-    icon:"https://cdn-icons-png.flaticon.com/512/4144/4144513.png",
+    name:"订阅线路 7",
+    icon:"https://img.icons8.com/3d-fluency/94/globe-earth.png",
     color:"#3b82f6",
     password:"7777",
     url:"https://example.com/sub7.yaml"
 },
 
 {
-    name:"线路 8",
-    icon:"https://cdn-icons-png.flaticon.com/512/1828/1828884.png",
+    name:"订阅线路 8",
+    icon:"https://img.icons8.com/3d-fluency/94/star.png",
     color:"#eab308",
     password:"8888",
     url:"https://example.com/sub8.yaml"
 },
 
 {
-    name:"线路 9",
-    icon:"https://cdn-icons-png.flaticon.com/512/765/765547.png",
+    name:"订阅线路 9",
+    icon:"https://img.icons8.com/3d-fluency/94/leaf.png",
     color:"#84cc16",
     password:"9999",
     url:"https://example.com/sub9.yaml"
 },
 
 {
-    name:"线路 10",
-    icon:"https://cdn-icons-png.flaticon.com/512/2583/2583344.png",
+    name:"订阅线路 10",
+    icon:"https://img.icons8.com/3d-fluency/94/diamond.png",
     color:"#8b5cf6",
     password:"0000",
     url:"https://example.com/sub10.yaml"
 }
 
 ];
+
+/*
+====================================
+生成卡片
+====================================
+*/
+
+const grid =
+document.getElementById("grid");
+
+subscriptions.forEach((item,index)=>{
+
+    const card =
+    document.createElement("div");
+
+    card.className =
+    "card";
+
+    card.innerHTML = `
+
+    <div
+    class="number"
+    style="
+    background:${item.color}
+    ">
+
+        ${index+1}
+
+    </div>
+
+    <div class="icon">
+
+        <img src="${item.icon}">
+
+    </div>
+
+    <div class="card-title">
+        ${item.name}
+    </div>
+
+    <div class="card-desc">
+        一键导入 Clash 订阅
+    </div>
+
+    <button
+    class="btn"
+    style="
+    background:${item.color}
+    "
+    onclick="
+    importSub(${index})
+    ">
+
+        🚀 一键导入
+
+    </button>
+
+    <button
+    class="btn copy"
+    onclick="
+    copySub(${index})
+    ">
+
+        📋 复制链接
+
+    </button>
+
+    `;
+
+    grid.appendChild(card);
+});
 
 /*
 ====================================
@@ -842,61 +1282,7 @@ function verifyPassword(item){
 
 /*
 ====================================
-生成线路卡片
-====================================
-*/
-
-const grid =
-document.getElementById("grid");
-
-subscriptions.forEach((item,index)=>{
-
-    const card =
-    document.createElement("div");
-
-    card.className = "card";
-
-    card.innerHTML = `
-
-    <div class="icon">
-
-        <img src="${item.icon}">
-
-    </div>
-
-    <div class="card-title">
-        ${item.name}
-    </div>
-
-    <div class="card-desc">
-        自动识别系统导入
-    </div>
-
-    <button
-    class="btn"
-    style="background:${item.color}"
-    onclick="importSub(${index})">
-
-        🚀 一键导入
-
-    </button>
-
-    <button
-    class="btn copy"
-    onclick="copySub(${index})">
-
-        📋 复制链接
-
-    </button>
-
-    `;
-
-    grid.appendChild(card);
-});
-
-/*
-====================================
-自动识别系统导入
+导入
 ====================================
 */
 
@@ -915,7 +1301,7 @@ function importSub(index){
 
     let scheme = "";
 
-    // iPhone / iPad
+    // iPhone
 
     if(
 
@@ -949,7 +1335,7 @@ function importSub(index){
         encodeURIComponent(item.url);
     }
 
-    // Windows / macOS
+    // Windows/macOS
 
     else{
 
