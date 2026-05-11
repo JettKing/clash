@@ -753,7 +753,7 @@ document.getElementById("system")
 
 /*
 ====================================
-微信 / QQ 遮罩检测
+微信 / QQ 高级遮罩
 ====================================
 */
 
@@ -775,33 +775,51 @@ function checkInnerBrowser(){
 
     if(isWechat || isQQ){
 
+        // 禁止滚动
+
+        document.body.style.overflow =
+        "hidden";
+
+        document.documentElement.style.overflow =
+        "hidden";
+
+        // 添加遮罩
+
         document.body.innerHTML += `
 
         <div id="browserMask">
 
-            <div class="mask-content">
+            <div class="arrow">
+                ↗
+            </div>
 
-                <div class="arrow">
-                    ↗
+            <div class="mask-card">
+
+                <div class="mask-icon">
+                    🌐
                 </div>
 
                 <h2>
-                    请在浏览器打开
+                    请使用浏览器打开
                 </h2>
 
                 <p>
-                    当前为微信 / QQ 内置浏览器
-                    <br>
-                    无法自动导入订阅
+                    当前处于微信 / QQ 内置浏览器
                 </p>
 
-                <div class="tip">
+                <div class="steps">
 
-                    点击右上角 · 选择
+                    请点击右上角
 
-                    <br>
+                    <br><br>
 
-                    “在浏览器打开”
+                    选择：
+
+                    <br><br>
+
+                    <span>
+                        「在浏览器打开」
+                    </span>
 
                 </div>
 
@@ -810,9 +828,7 @@ function checkInnerBrowser(){
         </div>
         `;
 
-        /*
-        遮罩样式
-        */
+        // 样式
 
         const style =
         document.createElement("style");
@@ -826,9 +842,12 @@ function checkInnerBrowser(){
             inset:0;
 
             background:
-            rgba(0,0,0,.88);
+            rgba(0,0,0,.45);
 
-            z-index:99999;
+            backdrop-filter:
+            blur(10px);
+
+            z-index:999999;
 
             display:flex;
 
@@ -836,27 +855,28 @@ function checkInnerBrowser(){
 
             align-items:center;
 
-            padding:30px;
-        }
-
-        .mask-content{
-
-            text-align:center;
-
-            color:white;
+            padding:25px;
         }
 
         .arrow{
 
-            font-size:80px;
+            position:absolute;
 
-            margin-bottom:20px;
+            top:80px;
+
+            right:30px;
+
+            color:white;
+
+            font-size:90px;
+
+            font-weight:300;
 
             animation:
-            move 1s infinite alternate;
+            arrowMove 1s infinite alternate;
         }
 
-        @keyframes move{
+        @keyframes arrowMove{
 
             from{
 
@@ -871,61 +891,137 @@ function checkInnerBrowser(){
             }
         }
 
-        .mask-content h2{
+        .mask-card{
 
-            font-size:36px;
+            width:100%;
 
-            margin-bottom:20px;
+            max-width:620px;
+
+            background:
+            rgba(255,255,255,.92);
+
+            backdrop-filter:
+            blur(30px);
+
+            border-radius:38px;
+
+            padding:55px 40px;
+
+            text-align:center;
+
+            box-shadow:
+            0 20px 60px rgba(0,0,0,.2);
         }
 
-        .mask-content p{
+        .mask-icon{
 
-            font-size:18px;
+            width:110px;
+            height:110px;
 
-            line-height:1.8;
-
-            color:#d1d5db;
+            margin:auto;
 
             margin-bottom:30px;
+
+            border-radius:999px;
+
+            background:
+            linear-gradient(
+            135deg,
+            #eef2ff,
+            #e0e7ff
+            );
+
+            display:flex;
+
+            justify-content:center;
+            align-items:center;
+
+            font-size:56px;
         }
 
-        .tip{
+        .mask-card h2{
 
-            display:inline-block;
+            font-size:52px;
 
-            background:white;
+            margin-bottom:25px;
 
             color:#111827;
+        }
 
-            padding:16px 24px;
+        .mask-card p{
 
-            border-radius:18px;
+            font-size:28px;
 
-            font-size:16px;
+            color:#6b7280;
+
+            margin-bottom:35px;
+
+            line-height:1.8;
+        }
+
+        .steps{
+
+            font-size:30px;
+
+            line-height:2;
+
+            color:#374151;
+        }
+
+        .steps span{
+
+            color:#2563eb;
 
             font-weight:700;
         }
+
+        /* 手机 */
 
         @media(max-width:768px){
 
             .arrow{
 
-                font-size:60px;
+                font-size:70px;
+
+                top:60px;
+
+                right:20px;
             }
 
-            .mask-content h2{
+            .mask-card{
 
-                font-size:28px;
+                border-radius:30px;
+
+                padding:40px 25px;
             }
 
-            .mask-content p{
+            .mask-icon{
+
+                width:85px;
+                height:85px;
+
+                font-size:42px;
+
+                margin-bottom:20px;
+            }
+
+            .mask-card h2{
+
+                font-size:24px;
+
+                margin-bottom:15px;
+            }
+
+            .mask-card p{
 
                 font-size:16px;
+
+                margin-bottom:20px;
             }
 
-            .tip{
+            .steps{
 
-                font-size:14px;
+                font-size:18px;
             }
         }
 
