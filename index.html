@@ -31,8 +31,6 @@ body{
     padding:20px;
 }
 
-/* 顶部 */
-
 .topbar{
 
     background:
@@ -120,8 +118,6 @@ body{
 
     gap:25px;
 }
-
-/* 左边 */
 
 .hero{
 
@@ -273,8 +269,6 @@ body{
     background:#e5e7eb;
 }
 
-/* 右边 */
-
 .sidebar{
 
     display:flex;
@@ -368,8 +362,6 @@ body{
     line-height:1.8;
 }
 
-/* 手机 */
-
 @media(max-width:980px){
 
     .container{
@@ -389,8 +381,6 @@ body{
 
 <body>
 
-<!-- 顶部 -->
-
 <div class="topbar">
 
     <div class="logo">
@@ -409,8 +399,6 @@ body{
 
 <div class="container">
 
-<!-- 左边 -->
-
 <div>
 
 <div class="hero">
@@ -420,7 +408,7 @@ body{
     </h1>
 
     <p>
-        支持 Clash Verge / Mihomo / Clash for Windows
+        自动识别 Windows / macOS / Android / iPhone
     </p>
 
     <div class="system" id="system">
@@ -429,17 +417,11 @@ body{
 
 </div>
 
-<!-- 卡片 -->
-
 <div class="grid" id="grid"></div>
 
-<!-- 提示 -->
-
 <div class="notice">
-    若无法自动拉起 Clash，请复制订阅后手动导入客户端。
+    若无法自动拉起客户端，请复制订阅链接后手动导入。
 </div>
-
-<!-- 页脚 -->
 
 <div class="footer">
     安全连接 · 隐私保护 · 永不记录用户信息
@@ -449,8 +431,6 @@ body{
 
 </div>
 
-<!-- 右边 -->
-
 <div class="sidebar">
 
 <div class="side-card">
@@ -458,8 +438,6 @@ body{
     <div class="side-title">
         客服支持
     </div>
-
-    <!-- QQ -->
 
     <div class="contact">
 
@@ -481,8 +459,6 @@ body{
 
     </div>
 
-    <!-- 微信 -->
-
     <div class="contact">
 
         <div class="contact-icon">
@@ -502,8 +478,6 @@ body{
         </div>
 
     </div>
-
-    <!-- 邮箱 -->
 
     <div class="contact">
 
@@ -561,7 +535,7 @@ function detectSystem(){
 
     if(/iPhone|iPad|iPod/i.test(ua)){
 
-        return "📱 iOS";
+        return "📱 iPhone / iPad";
     }
 
     return "🌐 Unknown";
@@ -709,7 +683,7 @@ subscriptions.forEach((item,index)=>{
     </div>
 
     <div class="card-desc">
-        一键导入 Clash 订阅
+        自动识别系统导入
     </div>
 
     <button
@@ -736,7 +710,7 @@ subscriptions.forEach((item,index)=>{
 
 /*
 ====================================
-导入
+自动识别系统导入
 ====================================
 */
 
@@ -750,14 +724,52 @@ function importSub(index){
         return;
     }
 
-    const clash =
+    const ua =
+    navigator.userAgent;
 
-    "clash://install-config?url=" +
+    let scheme = "";
 
-    encodeURIComponent(item.url);
+    /*
+    iPhone / iPad
+    */
+
+    if(/iPhone|iPad|iPod/i.test(ua)){
+
+        scheme =
+
+        "shadowrocket://add/sub://" +
+
+        btoa(item.url);
+    }
+
+    /*
+    Android
+    */
+
+    else if(/Android/i.test(ua)){
+
+        scheme =
+
+        "clash://install-config?url=" +
+
+        encodeURIComponent(item.url);
+    }
+
+    /*
+    Windows / macOS
+    */
+
+    else{
+
+        scheme =
+
+        "clash://install-config?url=" +
+
+        encodeURIComponent(item.url);
+    }
 
     window.location.href =
-    clash;
+    scheme;
 }
 
 /*
