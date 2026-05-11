@@ -753,6 +753,44 @@ document.getElementById("system")
 
 /*
 ====================================
+检测微信 / QQ 内置浏览器
+====================================
+*/
+
+function checkInnerBrowser(){
+
+    const ua =
+    navigator.userAgent.toLowerCase();
+
+    // 微信
+
+    const isWechat =
+    ua.includes("micromessenger");
+
+    // QQ
+
+    const isQQ =
+
+    ua.includes("qq/")
+
+    ||
+
+    ua.includes("qqbrowser");
+
+    if(isWechat || isQQ){
+
+        alert(
+            "请使用默认浏览器打开网页，否则无法自动导入订阅。"
+        );
+    }
+}
+
+// 执行检测
+
+checkInnerBrowser();
+
+/*
+====================================
 订阅线路
 ====================================
 */
