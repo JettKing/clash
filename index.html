@@ -47,8 +47,6 @@ body{
 
     display:flex;
 
-    justify-content:space-between;
-
     align-items:center;
 
     margin-bottom:30px;
@@ -625,8 +623,6 @@ body{
         客服支持
     </div>
 
-    <!-- QQ -->
-
     <div class="contact">
 
         <div class="contact-icon">
@@ -647,8 +643,6 @@ body{
 
     </div>
 
-    <!-- 微信 -->
-
     <div class="contact">
 
         <div class="contact-icon">
@@ -668,8 +662,6 @@ body{
         </div>
 
     </div>
-
-    <!-- 邮箱 -->
 
     <div class="contact">
 
@@ -710,9 +702,7 @@ function detectSystem(){
     const ua =
     navigator.userAgent;
 
-    /*
-    iPhone / iPad
-    */
+    // iPhone / iPad
 
     if(
 
@@ -733,27 +723,21 @@ function detectSystem(){
         return "📱 iPhone / iPad";
     }
 
-    /*
-    Android
-    */
+    // Android
 
     if(/Android/i.test(ua)){
 
         return "🤖 Android";
     }
 
-    /*
-    Windows
-    */
+    // Windows
 
     if(/Windows/i.test(ua)){
 
         return "🖥 Windows";
     }
 
-    /*
-    macOS
-    */
+    // macOS
 
     if(/Macintosh|Mac OS X/i.test(ua)){
 
@@ -821,6 +805,38 @@ const subscriptions = [
     color:"#ec4899",
     password:"6666",
     url:"https://example.com/sub6.yaml"
+},
+
+{
+    name:"线路 7",
+    icon:"🌐",
+    color:"#3b82f6",
+    password:"7777",
+    url:"https://example.com/sub7.yaml"
+},
+
+{
+    name:"线路 8",
+    icon:"⭐",
+    color:"#eab308",
+    password:"8888",
+    url:"https://example.com/sub8.yaml"
+},
+
+{
+    name:"线路 9",
+    icon:"🍃",
+    color:"#84cc16",
+    password:"9999",
+    url:"https://example.com/sub9.yaml"
+},
+
+{
+    name:"线路 10",
+    icon:"💎",
+    color:"#8b5cf6",
+    password:"0000",
+    url:"https://example.com/sub10.yaml"
 }
 
 ];
@@ -919,9 +935,7 @@ function importSub(index){
 
     let scheme = "";
 
-    /*
-    iPhone / iPad
-    */
+    // iPhone / iPad
 
     if(
 
@@ -946,9 +960,7 @@ function importSub(index){
         btoa(item.url);
     }
 
-    /*
-    Android
-    */
+    // Android
 
     else if(/Android/i.test(ua)){
 
@@ -959,9 +971,7 @@ function importSub(index){
         encodeURIComponent(item.url);
     }
 
-    /*
-    Windows / macOS
-    */
+    // Windows / macOS
 
     else{
 
