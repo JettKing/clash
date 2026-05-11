@@ -753,7 +753,7 @@ document.getElementById("system")
 
 /*
 ====================================
-检测微信 / QQ 内置浏览器
+微信 / QQ 遮罩检测
 ====================================
 */
 
@@ -762,12 +762,8 @@ function checkInnerBrowser(){
     const ua =
     navigator.userAgent.toLowerCase();
 
-    // 微信
-
     const isWechat =
     ua.includes("micromessenger");
-
-    // QQ
 
     const isQQ =
 
@@ -779,9 +775,163 @@ function checkInnerBrowser(){
 
     if(isWechat || isQQ){
 
-        alert(
-            "请使用默认浏览器打开网页，否则无法自动导入订阅。"
-        );
+        document.body.innerHTML += `
+
+        <div id="browserMask">
+
+            <div class="mask-content">
+
+                <div class="arrow">
+                    ↗
+                </div>
+
+                <h2>
+                    请在浏览器打开
+                </h2>
+
+                <p>
+                    当前为微信 / QQ 内置浏览器
+                    <br>
+                    无法自动导入订阅
+                </p>
+
+                <div class="tip">
+
+                    点击右上角 · 选择
+
+                    <br>
+
+                    “在浏览器打开”
+
+                </div>
+
+            </div>
+
+        </div>
+        `;
+
+        /*
+        遮罩样式
+        */
+
+        const style =
+        document.createElement("style");
+
+        style.innerHTML = `
+
+        #browserMask{
+
+            position:fixed;
+
+            inset:0;
+
+            background:
+            rgba(0,0,0,.88);
+
+            z-index:99999;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            padding:30px;
+        }
+
+        .mask-content{
+
+            text-align:center;
+
+            color:white;
+        }
+
+        .arrow{
+
+            font-size:80px;
+
+            margin-bottom:20px;
+
+            animation:
+            move 1s infinite alternate;
+        }
+
+        @keyframes move{
+
+            from{
+
+                transform:
+                translateY(0);
+            }
+
+            to{
+
+                transform:
+                translateY(-10px);
+            }
+        }
+
+        .mask-content h2{
+
+            font-size:36px;
+
+            margin-bottom:20px;
+        }
+
+        .mask-content p{
+
+            font-size:18px;
+
+            line-height:1.8;
+
+            color:#d1d5db;
+
+            margin-bottom:30px;
+        }
+
+        .tip{
+
+            display:inline-block;
+
+            background:white;
+
+            color:#111827;
+
+            padding:16px 24px;
+
+            border-radius:18px;
+
+            font-size:16px;
+
+            font-weight:700;
+        }
+
+        @media(max-width:768px){
+
+            .arrow{
+
+                font-size:60px;
+            }
+
+            .mask-content h2{
+
+                font-size:28px;
+            }
+
+            .mask-content p{
+
+                font-size:16px;
+            }
+
+            .tip{
+
+                font-size:14px;
+            }
+        }
+
+        `;
+
+        document.head.appendChild(style);
     }
 }
 
