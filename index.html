@@ -3,27 +3,16 @@
 
 <head>
 
-<!-- ～～～～～～～～ 基础信息 ～～～～～～～～ -->
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>
-Clash 一键导入
-</title>
+<title>Clash 一键导入</title>
 
 <style>
 
-/* ～～～～～～～～ 全局 ～～～～～～～～ */
-
 *{
-
     margin:0;
     padding:0;
-
     box-sizing:border-box;
 }
 
@@ -42,7 +31,7 @@ body{
     padding:20px;
 }
 
-/* ～～～～～～～～ 顶部导航 ～～～～～～～～ */
+/* 顶部 */
 
 .topbar{
 
@@ -66,8 +55,6 @@ body{
     0 10px 30px rgba(0,0,0,.05);
 }
 
-/* LOGO */
-
 .logo{
 
     display:flex;
@@ -76,8 +63,6 @@ body{
 
     gap:15px;
 }
-
-/* LOGO 图标 */
 
 .logo-icon{
 
@@ -103,16 +88,12 @@ body{
     font-size:26px;
 }
 
-/* LOGO 文字 */
-
 .logo-text{
 
     font-size:34px;
 
     font-weight:800;
 }
-
-/* 渐变文字 */
 
 .logo-text span{
 
@@ -128,7 +109,7 @@ body{
     -webkit-text-fill-color:transparent;
 }
 
-/* ～～～～～～～～ 主布局 ～～～～～～～～ */
+/* 布局 */
 
 .container{
 
@@ -140,7 +121,7 @@ body{
     gap:25px;
 }
 
-/* ～～～～～～～～ Hero 区域 ～～～～～～～～ */
+/* Hero */
 
 .hero{
 
@@ -158,16 +139,12 @@ body{
     text-align:center;
 }
 
-/* 主标题 */
-
 .hero h1{
 
     font-size:62px;
 
     margin-bottom:12px;
 }
-
-/* 标题渐变 */
 
 .hero h1 span{
 
@@ -183,16 +160,12 @@ body{
     -webkit-text-fill-color:transparent;
 }
 
-/* 副标题 */
-
 .hero p{
 
     color:#6b7280;
 
     font-size:18px;
 }
-
-/* 当前系统 */
 
 .system{
 
@@ -219,9 +192,11 @@ body{
     margin-left:auto;
 
     margin-right:auto;
+
+    text-align:center;
 }
 
-/* ～～～～～～～～ 线路卡片 ～～～～～～～～ */
+/* 卡片 */
 
 .grid{
 
@@ -232,8 +207,6 @@ body{
 
     gap:20px;
 }
-
-/* 单个卡片 */
 
 .card{
 
@@ -249,15 +222,11 @@ body{
     transition:.25s;
 }
 
-/* 卡片悬停 */
-
 .card:hover{
 
     transform:
     translateY(-6px);
 }
-
-/* 图标 */
 
 .icon{
 
@@ -265,8 +234,6 @@ body{
 
     margin-bottom:18px;
 }
-
-/* 标题 */
 
 .card-title{
 
@@ -277,16 +244,12 @@ body{
     margin-bottom:10px;
 }
 
-/* 描述 */
-
 .card-desc{
 
     color:#6b7280;
 
     margin-bottom:22px;
 }
-
-/* 按钮 */
 
 .btn{
 
@@ -309,14 +272,10 @@ body{
     transition:.2s;
 }
 
-/* 按钮悬停 */
-
 .btn:hover{
 
     opacity:.92;
 }
-
-/* 复制按钮 */
 
 .copy{
 
@@ -325,7 +284,12 @@ body{
     color:#111827;
 }
 
-/* ～～～～～～～～ 客服区域 ～～～～～～～～ */
+.copy:hover{
+
+    background:#e5e7eb;
+}
+
+/* 侧边栏 */
 
 .sidebar{
 
@@ -357,8 +321,6 @@ body{
     margin-bottom:22px;
 }
 
-/* 联系方式 */
-
 .contact{
 
     display:flex;
@@ -376,14 +338,10 @@ body{
     margin-bottom:15px;
 }
 
-/* 联系图标 */
-
 .contact-icon{
 
     font-size:34px;
 }
-
-/* 联系标题 */
 
 .contact-name{
 
@@ -392,14 +350,12 @@ body{
     margin-bottom:5px;
 }
 
-/* 联系内容 */
-
 .contact-value{
 
     color:#6b7280;
 }
 
-/* ～～～～～～～～ 提示区域 ～～～～～～～～ */
+/* 提示 */
 
 .notice{
 
@@ -419,7 +375,7 @@ body{
     0 10px 25px rgba(0,0,0,.05);
 }
 
-/* ～～～～～～～～ 页脚 ～～～～～～～～ */
+/* 页脚 */
 
 .footer{
 
@@ -432,7 +388,7 @@ body{
     line-height:1.8;
 }
 
-/* ～～～～～～～～ 手机优化 ～～～～～～～～ */
+/* 手机优化 */
 
 @media(max-width:980px){
 
@@ -496,6 +452,8 @@ body{
     .hero p{
 
         font-size:13px;
+
+        line-height:1.5;
     }
 
     .system{
@@ -507,8 +465,6 @@ body{
         font-size:12px;
     }
 
-    /* 手机双列 */
-
     .grid{
 
         grid-template-columns:
@@ -517,13 +473,13 @@ body{
         gap:8px;
     }
 
-    /* 手机卡片 */
-
     .card{
 
-        padding:10px;
+        padding:8px;
 
         border-radius:18px;
+
+        min-height:auto;
     }
 
     .icon{
@@ -538,6 +494,8 @@ body{
         font-size:15px;
 
         margin-bottom:3px;
+
+        line-height:1.2;
     }
 
     .card-desc{
@@ -545,17 +503,84 @@ body{
         font-size:11px;
 
         margin-bottom:8px;
+
+        line-height:1.3;
     }
 
     .btn{
 
-        padding:6px;
+        padding:4px;
 
         border-radius:10px;
 
         font-size:12px;
 
         margin-bottom:6px;
+    }
+
+    .sidebar{
+
+        margin-top:12px;
+    }
+
+    .side-card{
+
+        padding:16px;
+
+        border-radius:18px;
+    }
+
+    .side-title{
+
+        font-size:20px;
+
+        margin-bottom:12px;
+    }
+
+    .contact{
+
+        padding:10px;
+
+        border-radius:14px;
+
+        gap:10px;
+
+        margin-bottom:10px;
+    }
+
+    .contact-icon{
+
+        font-size:20px;
+    }
+
+    .contact-name{
+
+        font-size:13px;
+    }
+
+    .contact-value{
+
+        font-size:11px;
+    }
+
+    .notice{
+
+        margin-top:12px;
+
+        padding:12px;
+
+        font-size:12px;
+
+        border-radius:16px;
+    }
+
+    .footer{
+
+        font-size:11px;
+
+        line-height:1.6;
+
+        margin-top:12px;
     }
 }
 
@@ -565,7 +590,7 @@ body{
 
 <body>
 
-<!-- ～～～～～～～～ 顶部导航 ～～～～～～～～ -->
+<!-- 顶部 -->
 
 <div class="topbar">
 
@@ -576,94 +601,64 @@ body{
         </div>
 
         <div class="logo-text">
-
-            <span>Clash</span>
-
-            一键导入
-
+            <span><!-- Clash --></span> <!-- 一键导入 -->
         </div>
 
     </div>
 
 </div>
 
-<!-- ～～～～～～～～ 主布局 ～～～～～～～～ -->
-
 <div class="container">
 
-<!-- 左侧 -->
+<!-- 左边 -->
 
 <div>
-
-<!-- Hero -->
 
 <div class="hero">
 
     <h1>
-
-        <span>Clash</span>
-
-        一键导入
-
+        <span>Clash</span> 一键导入
     </h1>
 
     <p>
-
         自动识别 Windows / macOS / Android / iPhone
-
     </p>
 
-    <div
-    class="system"
-    id="system">
-
+    <div class="system" id="system">
         正在识别系统...
-
     </div>
 
 </div>
 
-<!-- 线路卡片 -->
+<!-- 卡片 -->
 
-<div
-class="grid"
-id="grid"></div>
+<div class="grid" id="grid"></div>
 
 <!-- 提示 -->
 
 <div class="notice">
-
     若无法自动拉起客户端，请复制订阅后手动导入。
-
 </div>
 
 <!-- 页脚 -->
 
 <div class="footer">
-
     安全连接 · 隐私保护 · 永不记录用户信息
-
     <br>
-
     Powered By GitHub Pages
-
 </div>
 
 </div>
 
-<!-- 右侧 -->
+<!-- 右边 -->
 
 <div class="sidebar">
 
 <div class="side-card">
 
     <div class="side-title">
-
         客服支持
-
     </div>
-
-    <!-- QQ -->
 
     <div class="contact">
 
@@ -685,6 +680,46 @@ id="grid"></div>
 
     </div>
 
+    <div class="contact">
+
+        <div class="contact-icon">
+            💬
+        </div>
+
+        <div>
+
+            <div class="contact-name">
+                联系微信
+            </div>
+
+            <div class="contact-value">
+                WX160318999
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="contact">
+
+        <div class="contact-icon">
+            📧
+        </div>
+
+        <div>
+
+            <div class="contact-name">
+                联系邮箱
+            </div>
+
+            <div class="contact-value">
+                jeanellescarsellacfl55@gmail.com
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
 </div>
@@ -693,12 +728,18 @@ id="grid"></div>
 
 <script>
 
-/* ～～～～～～～～ 系统识别 ～～～～～～～～ */
+/*
+====================================
+真正兼容 iPhone 的系统识别
+====================================
+*/
 
 function detectSystem(){
 
     const ua =
     navigator.userAgent;
+
+    // iPhone / iPad
 
     if(
 
@@ -719,15 +760,21 @@ function detectSystem(){
         return "📱 iPhone / iPad";
     }
 
+    // Android
+
     if(/Android/i.test(ua)){
 
         return "🤖 Android";
     }
 
+    // Windows
+
     if(/Windows/i.test(ua)){
 
         return "🖥 Windows";
     }
+
+    // macOS
 
     if(/Macintosh|Mac OS X/i.test(ua)){
 
@@ -737,14 +784,675 @@ function detectSystem(){
     return "🌐 Unknown";
 }
 
-/* 显示系统 */
-
 document.getElementById("system")
 .innerText =
 "当前系统：" + detectSystem();
 
+/*
+====================================
+微信 / QQ 高级遮罩
+====================================
+*/
+
+function checkInnerBrowser(){
+
+    const ua =
+    navigator.userAgent.toLowerCase();
+
+    const isWechat =
+    ua.includes("micromessenger");
+
+    const isQQ =
+
+    ua.includes("qq/")
+
+    ||
+
+    ua.includes("qqbrowser");
+
+    if(isWechat || isQQ){
+
+        /*
+        真正锁死页面
+        */
+
+        document.body.style.overflow =
+        "hidden";
+
+        document.documentElement.style.overflow =
+        "hidden";
+
+        document.body.style.height =
+        "100vh";
+
+        document.documentElement.style.height =
+        "100vh";
+
+        /*
+        禁止 iPhone 滑动
+        */
+
+        document.addEventListener(
+            "touchmove",
+            function(e){
+
+                e.preventDefault();
+
+            },
+            { passive:false }
+        );
+
+        /*
+        添加遮罩
+        */
+
+        document.body.innerHTML += `
+
+        <div id="browserMask">
+
+            <div class="arrow">
+                ↗
+            </div>
+
+            <div class="mask-card">
+
+                <div class="mask-icon">
+                    🌐
+                </div>
+
+                <h2>
+                    请使用默认浏览器打开
+                </h2>
+
+                <p>
+                    当前处于微信 / QQ 内置浏览器
+                </p>
+
+                <div class="steps">
+
+                    请点击右上角
+
+                    <br><br>
+
+                    选择：
+
+                    <br><br>
+
+                    <span>
+                        「在默认浏览器打开」
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+        `;
+
+        /*
+        样式
+        */
+
+        const style =
+        document.createElement("style");
+
+        style.innerHTML = `
+
+        html,
+        body{
+
+            overscroll-behavior:none;
+
+            touch-action:none;
+        }
+
+        #browserMask{
+
+            position:fixed;
+
+            inset:0;
+
+            width:100vw;
+
+            height:100vh;
+
+            overflow:hidden;
+
+            background:
+            rgba(0,0,0,.45);
+
+            backdrop-filter:
+            blur(10px);
+
+            z-index:999999;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            padding:25px;
+        }
+
+        .arrow{
+
+            position:absolute;
+
+            top:80px;
+
+            right:30px;
+
+            color:white;
+
+            font-size:90px;
+
+            font-weight:300;
+
+            animation:
+            arrowMove 1s infinite alternate;
+        }
+
+        @keyframes arrowMove{
+
+            from{
+
+                transform:
+                translateY(0);
+            }
+
+            to{
+
+                transform:
+                translateY(-10px);
+            }
+        }
+
+        .mask-card{
+
+            width:100%;
+
+            max-width:620px;
+
+            background:
+            rgba(255,255,255,.92);
+
+            backdrop-filter:
+            blur(30px);
+
+            border-radius:38px;
+
+            padding:55px 40px;
+
+            text-align:center;
+
+            box-shadow:
+            0 20px 60px rgba(0,0,0,.2);
+        }
+
+        .mask-icon{
+
+            width:110px;
+            height:110px;
+
+            margin:auto;
+
+            margin-bottom:30px;
+
+            border-radius:999px;
+
+            background:
+            linear-gradient(
+            135deg,
+            #eef2ff,
+            #e0e7ff
+            );
+
+            display:flex;
+
+            justify-content:center;
+            align-items:center;
+
+            font-size:56px;
+        }
+
+        .mask-card h2{
+
+            font-size:52px;
+
+            margin-bottom:25px;
+
+            color:#111827;
+        }
+
+        .mask-card p{
+
+            font-size:28px;
+
+            color:#6b7280;
+
+            margin-bottom:35px;
+
+            line-height:1.8;
+        }
+
+        .steps{
+
+            font-size:30px;
+
+            line-height:2;
+
+            color:#374151;
+        }
+
+        .steps span{
+
+            color:#2563eb;
+
+            font-weight:700;
+        }
+
+        /* 手机 */
+
+        @media(max-width:768px){
+
+            .arrow{
+
+                font-size:70px;
+
+                top:60px;
+
+                right:20px;
+            }
+
+            .mask-card{
+
+                border-radius:30px;
+
+                padding:40px 25px;
+            }
+
+            .mask-icon{
+
+                width:85px;
+                height:85px;
+
+                font-size:42px;
+
+                margin-bottom:20px;
+            }
+
+            .mask-card h2{
+
+                font-size:24px;
+
+                margin-bottom:15px;
+            }
+
+            .mask-card p{
+
+                font-size:16px;
+
+                margin-bottom:20px;
+            }
+
+            .steps{
+
+                font-size:18px;
+            }
+        }
+
+        `;
+
+        document.head.appendChild(style);
+    }
+}
+
+// 执行检测
+
+checkInnerBrowser();
+
+/*
+====================================
+禁止开发者工具
+====================================
+*/
+
+document.addEventListener(
+    "contextmenu",
+    function(e){
+
+        e.preventDefault();
+
+    }
+);
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        // F12
+
+        if(e.key === "F12"){
+
+            e.preventDefault();
+        }
+
+        // Ctrl+U
+
+        if(
+            e.ctrlKey
+            &&
+            e.key.toLowerCase() === "u"
+        ){
+
+            e.preventDefault();
+        }
+
+        // Ctrl+Shift+I
+
+        if(
+            e.ctrlKey
+            &&
+            e.shiftKey
+            &&
+            e.key.toLowerCase() === "i"
+        ){
+
+            e.preventDefault();
+        }
+
+        // Ctrl+Shift+J
+
+        if(
+            e.ctrlKey
+            &&
+            e.shiftKey
+            &&
+            e.key.toLowerCase() === "j"
+        ){
+
+            e.preventDefault();
+        }
+
+        // Ctrl+S
+
+        if(
+            e.ctrlKey
+            &&
+            e.key.toLowerCase() === "s"
+        ){
+
+            e.preventDefault();
+        }
+    }
+);
+
+/*
+====================================
+订阅线路
+====================================
+*/
+
+const subscriptions = [
+
+{
+    name:"龙",
+    icon:"🚀",
+    color:"#3b82f6",
+    password:"HYL7008",
+    url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/HYL&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
+},
+
+{
+    name:"虹",
+    icon:"⚡",
+    color:"#22c55e",
+    password:"FYH6268",
+    url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/FYH&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
+},
+
+{
+    name:"玉",
+    icon:"🪐",
+    color:"#8b5cf6",
+    password:"WXY6425",
+    url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/WXY&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
+},
+
+{
+    name:"琼",
+    icon:"☁️",
+    color:"#f59e0b",
+    password:"WXQ5954",
+    url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/WXQ&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
+},
+
+{
+    name:"极",
+    icon:"🛡️",
+    color:"#06b6d4",
+    password:"LXS6506",
+    url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/LXS&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
+},
+
+{
+    name:"琪",
+    icon:"📶",
+    color:"#ec4899",
+    password:"HMQ2676",
+    url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/HMQ&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
+},
+
+{
+    name:"线路 7",
+    icon:"🌐",
+    color:"#3b82f6",
+    password:"7777",
+    url:"https://example.com/sub7.yaml"
+},
+
+{
+    name:"线路 8",
+    icon:"⭐",
+    color:"#eab308",
+    password:"8888",
+    url:"https://example.com/sub8.yaml"
+},
+
+{
+    name:"线路 9",
+    icon:"🍃",
+    color:"#84cc16",
+    password:"9999",
+    url:"https://example.com/sub9.yaml"
+},
+
+{
+    name:"线路 10",
+    icon:"💎",
+    color:"#8b5cf6",
+    password:"0000",
+    url:"https://example.com/sub10.yaml"
+}
+
+];
+
+/*
+====================================
+密码验证
+====================================
+*/
+
+function verifyPassword(item){
+
+    const input =
+    prompt("请输入该线路密码");
+
+    if(input !== item.password){
+
+        alert("密码错误");
+
+        return false;
+    }
+
+    return true;
+}
+
+/*
+====================================
+生成卡片
+====================================
+*/
+
+const grid =
+document.getElementById("grid");
+
+subscriptions.forEach((item,index)=>{
+
+    const card =
+    document.createElement("div");
+
+    card.className = "card";
+
+    card.innerHTML = `
+
+    <div class="icon">
+        ${item.icon}
+    </div>
+
+    <div class="card-title">
+        ${item.name}
+    </div>
+
+    <div class="card-desc">
+        自动识别系统导入
+    </div>
+
+    <button
+    class="btn"
+    style="background:${item.color}"
+    onclick="importSub(${index})">
+
+        🚀 一键导入
+
+    </button>
+
+    <button
+    class="btn copy"
+    onclick="copySub(${index})">
+
+        📋 复制链接
+
+    </button>
+
+    `;
+
+    grid.appendChild(card);
+});
+
+/*
+====================================
+自动识别系统导入
+====================================
+*/
+
+function importSub(index){
+
+    const item =
+    subscriptions[index];
+
+    if(!verifyPassword(item)){
+
+        return;
+    }
+
+    const ua =
+    navigator.userAgent;
+
+    let scheme = "";
+
+    // iPhone / iPad
+
+    if(
+
+        /iPhone|iPad|iPod/i.test(ua)
+
+        ||
+
+        (
+            navigator.platform === 'MacIntel'
+
+            &&
+
+            navigator.maxTouchPoints > 1
+        )
+
+    ){
+
+        scheme =
+
+        "clash://install-config?url=" +
+
+        encodeURIComponent(item.url);
+    }
+
+    // Android
+
+    else if(/Android/i.test(ua)){
+
+        scheme =
+
+        "clash://install-config?url=" +
+
+        encodeURIComponent(item.url);
+    }
+
+    // Windows / macOS
+
+    else{
+
+        scheme =
+
+        "clash://install-config?url=" +
+
+        encodeURIComponent(item.url);
+    }
+
+    window.location.href =
+    scheme;
+}
+
+/*
+====================================
+复制
+====================================
+*/
+
+async function copySub(index){
+
+    const item =
+    subscriptions[index];
+
+    if(!verifyPassword(item)){
+
+        return;
+    }
+
+    try{
+
+        await navigator.clipboard
+        .writeText(item.url);
+
+        alert("订阅链接已复制");
+
+    }catch(e){
+
+        alert("复制失败");
+    }
+}
+
 </script>
 
 </body>
-
 </html>
