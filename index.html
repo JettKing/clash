@@ -213,22 +213,16 @@ body{
 
     background:white;
 
-    border-radius:26px;
+    border-radius:30px;
 
-    padding:18px 14px;
+    padding:25px;
 
     box-shadow:
     0 10px 25px rgba(0,0,0,.05);
 
     transition:.25s;
-
+    
     text-align:center;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
 }
 
 .card:hover{
@@ -239,23 +233,29 @@ body{
 
 .icon{
 
-    width:72px;
-    height:72px;
+    font-size:56px;
 
-    margin:auto;
-
-    margin-bottom:14px;
-
-    border-radius:22px;
-
-    background:#f5f5f7;
-
+    margin-bottom:18px;
+    
     display:flex;
 
     justify-content:center;
-    align-items:center;
+}
 
-    font-size:34px;
+.card-title{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+}
+
+.card-desc{
+
+    color:#6b7280;
+
+    margin-bottom:22px;
 }
 
 .btn{
@@ -264,17 +264,17 @@ body{
 
     border:none;
 
-    padding:12px;
+    padding:14px;
 
     border-radius:16px;
 
     color:white;
 
-    font-size:15px;
+    font-size:16px;
 
     cursor:pointer;
 
-    margin-bottom:10px;
+    margin-bottom:12px;
 
     transition:.2s;
 }
@@ -528,26 +528,41 @@ body{
 
     .card{
 
-        padding:14px 10px;
+        padding:8px;
 
-        border-radius:20px;
+        border-radius:18px;
+
+        min-height:auto;
     }
 
     .icon{
 
-        width:56px;
-        height:56px;
+        font-size:28px;
 
-        font-size:26px;
+        margin-bottom:6px;
+    }
 
-        border-radius:18px;
+    .card-title{
 
-        margin-bottom:10px;
+        font-size:15px;
+
+        margin-bottom:3px;
+
+        line-height:1.2;
+    }
+
+    .card-desc{
+
+        font-size:11px;
+
+        margin-bottom:8px;
+
+        line-height:1.3;
     }
 
     .btn{
 
-        padding:8px;
+        padding:4px;
 
         border-radius:10px;
 
@@ -586,15 +601,15 @@ body{
         margin-bottom:10px;
     }
 
-    .contact-icon{
+.contact-icon{
 
-        width:42px;
-        height:42px;
+    width:42px;
+    height:42px;
 
-        font-size:16px;
+    font-size:16px;
 
-        border-radius:12px;
-    }
+    border-radius:12px;
+}
 
     .contact-name{
 
@@ -633,6 +648,8 @@ body{
 
 <body>
 
+<!-- 顶部 -->
+
 <div class="topbar">
 
     <div class="logo">
@@ -642,7 +659,7 @@ body{
         </div>
 
         <div class="logo-text">
-            <span>Clash</span>
+            <span><!-- Clash --></span> <!-- 一键导入 -->
         </div>
 
     </div>
@@ -650,6 +667,8 @@ body{
 </div>
 
 <div class="container">
+
+<!-- 左边 -->
 
 <div>
 
@@ -669,11 +688,17 @@ body{
 
 </div>
 
+<!-- 卡片 -->
+
 <div class="grid" id="grid"></div>
+
+<!-- 提示 -->
 
 <div class="notice">
     若无法自动拉起客户端，请复制订阅后手动导入。
 </div>
+
+<!-- 页脚 -->
 
 <div class="footer">
     安全连接 · 隐私保护 · 永不记录用户信息
@@ -682,6 +707,8 @@ body{
 </div>
 
 </div>
+
+<!-- 右边 -->
 
 <div class="sidebar">
 
@@ -759,10 +786,18 @@ body{
 
 <script>
 
+/*
+====================================
+真正兼容 iPhone 的系统识别
+====================================
+*/
+
 function detectSystem(){
 
     const ua =
     navigator.userAgent;
+
+    // iPhone / iPad
 
     if(
 
@@ -772,7 +807,9 @@ function detectSystem(){
 
         (
             navigator.platform === 'MacIntel'
+
             &&
+
             navigator.maxTouchPoints > 1
         )
 
@@ -781,15 +818,21 @@ function detectSystem(){
         return "📱 iPhone / iPad";
     }
 
+    // Android
+
     if(/Android/i.test(ua)){
 
         return "🤖 Android";
     }
 
+    // Windows
+
     if(/Windows/i.test(ua)){
 
         return "🖥 Windows";
     }
+
+    // macOS
 
     if(/Macintosh|Mac OS X/i.test(ua)){
 
@@ -803,51 +846,464 @@ document.getElementById("system")
 .innerText =
 "当前系统：" + detectSystem();
 
+/*
+====================================
+微信 / QQ 高级遮罩
+====================================
+*/
+
+function checkInnerBrowser(){
+
+    const ua =
+    navigator.userAgent.toLowerCase();
+
+    const isWechat =
+    ua.includes("micromessenger");
+
+    const isQQ =
+
+    ua.includes("qq/")
+
+    ||
+
+    ua.includes("qqbrowser");
+
+    if(isWechat || isQQ){
+
+        /*
+        真正锁死页面
+        */
+
+        document.body.style.overflow =
+        "hidden";
+
+        document.documentElement.style.overflow =
+        "hidden";
+
+        document.body.style.height =
+        "100vh";
+
+        document.documentElement.style.height =
+        "100vh";
+
+        /*
+        禁止 iPhone 滑动
+        */
+
+        document.addEventListener(
+            "touchmove",
+            function(e){
+
+                e.preventDefault();
+
+            },
+            { passive:false }
+        );
+
+        /*
+        添加遮罩
+        */
+
+        document.body.innerHTML += `
+
+        <div id="browserMask">
+
+            <div class="arrow">
+                ↗
+            </div>
+
+            <div class="mask-card">
+
+                <div class="mask-icon">
+                    🌐
+                </div>
+
+                <h2>
+                    请使用默认浏览器打开
+                </h2>
+
+                <p>
+                    当前处于微信 / QQ 内置浏览器
+                </p>
+
+                <div class="steps">
+
+                    请点击右上角
+
+                    <br><br>
+
+                    选择：
+
+                    <br><br>
+
+                    <span>
+                        「在默认浏览器打开」
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+        `;
+
+        /*
+        样式
+        */
+
+        const style =
+        document.createElement("style");
+
+        style.innerHTML = `
+
+        html,
+        body{
+
+            overscroll-behavior:none;
+
+            touch-action:none;
+        }
+
+        #browserMask{
+
+            position:fixed;
+
+            inset:0;
+
+            width:100vw;
+
+            height:100vh;
+
+            overflow:hidden;
+
+            background:
+            rgba(0,0,0,.45);
+
+            backdrop-filter:
+            blur(10px);
+
+            z-index:999999;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            padding:25px;
+        }
+
+        .arrow{
+
+            position:absolute;
+
+            top:80px;
+
+            right:30px;
+
+            color:white;
+
+            font-size:90px;
+
+            font-weight:300;
+
+            animation:
+            arrowMove 1s infinite alternate;
+        }
+
+        @keyframes arrowMove{
+
+            from{
+
+                transform:
+                translateY(0);
+            }
+
+            to{
+
+                transform:
+                translateY(-10px);
+            }
+        }
+
+        .mask-card{
+
+            width:100%;
+
+            max-width:620px;
+
+            background:
+            rgba(255,255,255,.92);
+
+            backdrop-filter:
+            blur(30px);
+
+            border-radius:38px;
+
+            padding:55px 40px;
+
+            text-align:center;
+
+            box-shadow:
+            0 20px 60px rgba(0,0,0,.2);
+        }
+
+        .mask-icon{
+
+            width:110px;
+            height:110px;
+
+            margin:auto;
+
+            margin-bottom:30px;
+
+            border-radius:999px;
+
+            background:
+            linear-gradient(
+            135deg,
+            #eef2ff,
+            #e0e7ff
+            );
+
+            display:flex;
+
+            justify-content:center;
+            align-items:center;
+
+            font-size:56px;
+        }
+
+        .mask-card h2{
+
+            font-size:52px;
+
+            margin-bottom:25px;
+
+            color:#111827;
+        }
+
+        .mask-card p{
+
+            font-size:28px;
+
+            color:#6b7280;
+
+            margin-bottom:35px;
+
+            line-height:1.8;
+        }
+
+        .steps{
+
+            font-size:30px;
+
+            line-height:2;
+
+            color:#374151;
+        }
+
+        .steps span{
+
+            color:#2563eb;
+
+            font-weight:700;
+        }
+
+        /* 手机 */
+
+        @media(max-width:768px){
+
+            .arrow{
+
+                font-size:70px;
+
+                top:60px;
+
+                right:20px;
+            }
+
+            .mask-card{
+
+                border-radius:30px;
+
+                padding:40px 25px;
+            }
+
+            .mask-icon{
+
+                width:85px;
+                height:85px;
+
+                font-size:42px;
+
+                margin-bottom:20px;
+            }
+
+            .mask-card h2{
+
+                font-size:24px;
+
+                margin-bottom:15px;
+            }
+
+            .mask-card p{
+
+                font-size:16px;
+
+                margin-bottom:20px;
+            }
+
+            .steps{
+
+                font-size:18px;
+            }
+        }
+
+        `;
+
+        document.head.appendChild(style);
+    }
+}
+
+// 执行检测
+
+checkInnerBrowser();
+
+/*
+====================================
+禁止开发者工具
+====================================
+*/
+
+document.addEventListener(
+    "contextmenu",
+    function(e){
+
+        e.preventDefault();
+
+    }
+);
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        // F12
+
+        if(e.key === "F12"){
+
+            e.preventDefault();
+        }
+
+        // Ctrl+U
+
+        if(
+            e.ctrlKey
+            &&
+            e.key.toLowerCase() === "u"
+        ){
+
+            e.preventDefault();
+        }
+
+        // Ctrl+Shift+I
+
+        if(
+            e.ctrlKey
+            &&
+            e.shiftKey
+            &&
+            e.key.toLowerCase() === "i"
+        ){
+
+            e.preventDefault();
+        }
+
+        // Ctrl+Shift+J
+
+        if(
+            e.ctrlKey
+            &&
+            e.shiftKey
+            &&
+            e.key.toLowerCase() === "j"
+        ){
+
+            e.preventDefault();
+        }
+
+        // Ctrl+S
+
+        if(
+            e.ctrlKey
+            &&
+            e.key.toLowerCase() === "s"
+        ){
+
+            e.preventDefault();
+        }
+    }
+);
+
+/*
+====================================
+订阅线路
+====================================
+*/
+
 const subscriptions = [
 
 {
-    icon:"龙",
+    name:"龙",
+    icon:"🚀",
     color:"#3b82f6",
     password:"HYL7008",
     url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/HYL&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
 },
 
 {
-    icon:"虹",
+    name:"虹",
+    icon:"⚡",
     color:"#22c55e",
     password:"FYH6268",
     url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/FYH&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
 },
 
 {
-    icon:"玉",
+    name:"玉",
+    icon:"🪐",
     color:"#8b5cf6",
     password:"WXY6425",
     url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/WXY&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
 },
 
 {
-    icon:"琼",
+    name:"琼",
+    icon:"☁️",
     color:"#f59e0b",
     password:"WXQ5954",
     url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/WXQ&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
 },
 
 {
-    icon:"极",
+    name:"极",
+    icon:"🛡️",
     color:"#06b6d4",
     password:"LXS6506",
     url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/LXS&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
 },
 
 {
-    icon:"琪",
+    name:"琪",
+    icon:"📶",
     color:"#ec4899",
     password:"HMQ2676",
     url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/HMQ&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
 },
 
 {
+    name:"线路 7",
     icon:"🌐",
     color:"#3b82f6",
     password:"7777",
@@ -855,6 +1311,7 @@ const subscriptions = [
 },
 
 {
+    name:"线路 8",
     icon:"⭐",
     color:"#eab308",
     password:"8888",
@@ -862,6 +1319,7 @@ const subscriptions = [
 },
 
 {
+    name:"线路 9",
     icon:"🍃",
     color:"#84cc16",
     password:"9999",
@@ -869,13 +1327,14 @@ const subscriptions = [
 },
 
 {
+    name:"线路 10",
     icon:"💎",
     color:"#8b5cf6",
     password:"0000",
     url:"https://example.com/sub10.yaml"
 },
-
 {
+    name:"线路 11",
     icon:"🔥",
     color:"#ef4444",
     password:"1111",
@@ -883,13 +1342,19 @@ const subscriptions = [
 },
 
 {
+    name:"线路 12",
     icon:"🌙",
     color:"#6366f1",
     password:"2222",
     url:"https://example.com/sub12.yaml"
 }
-
 ];
+
+/*
+====================================
+密码验证
+====================================
+*/
 
 function verifyPassword(item){
 
@@ -905,6 +1370,12 @@ function verifyPassword(item){
 
     return true;
 }
+
+/*
+====================================
+生成卡片
+====================================
+*/
 
 const grid =
 document.getElementById("grid");
@@ -922,12 +1393,17 @@ subscriptions.forEach((item,index)=>{
         ${item.icon}
     </div>
 
+    <div class="card-title">
+        ${item.name}
+    </div>
+
+    <div class="card-desc">
+        自动识别系统导入
+    </div>
+
     <button
     class="btn"
-    style="
-    background:${item.color};
-    margin-top:8px;
-    "
+    style="background:${item.color}"
     onclick="importSub(${index})">
 
         🚀 一键导入
@@ -947,6 +1423,12 @@ subscriptions.forEach((item,index)=>{
     grid.appendChild(card);
 });
 
+/*
+====================================
+自动识别系统导入
+====================================
+*/
+
 function importSub(index){
 
     const item =
@@ -957,15 +1439,67 @@ function importSub(index){
         return;
     }
 
-    const scheme =
+    const ua =
+    navigator.userAgent;
 
-    "clash://install-config?url=" +
+    let scheme = "";
 
-    encodeURIComponent(item.url);
+    // iPhone / iPad
+
+    if(
+
+        /iPhone|iPad|iPod/i.test(ua)
+
+        ||
+
+        (
+            navigator.platform === 'MacIntel'
+
+            &&
+
+            navigator.maxTouchPoints > 1
+        )
+
+    ){
+
+        scheme =
+
+        "clash://install-config?url=" +
+
+        encodeURIComponent(item.url);
+    }
+
+    // Android
+
+    else if(/Android/i.test(ua)){
+
+        scheme =
+
+        "clash://install-config?url=" +
+
+        encodeURIComponent(item.url);
+    }
+
+    // Windows / macOS
+
+    else{
+
+        scheme =
+
+        "clash://install-config?url=" +
+
+        encodeURIComponent(item.url);
+    }
 
     window.location.href =
     scheme;
 }
+
+/*
+====================================
+复制
+====================================
+*/
 
 async function copySub(index){
 
