@@ -135,7 +135,7 @@ body{
     display:grid;
 
     grid-template-columns:
-    1fr 340px;
+    1fr 320px;
 
     gap:25px;
 }
@@ -325,7 +325,7 @@ body{
     color:#111827;
 }
 
-/* ～～～～～～～～ 高级客服区域 ～～～～～～～～ */
+/* ～～～～～～～～ 客服区域 ～～～～～～～～ */
 
 .sidebar{
 
@@ -338,208 +338,65 @@ body{
 
 .side-card{
 
-    background:
-    rgba(255,255,255,.88);
+    background:white;
 
-    backdrop-filter:
-    blur(25px);
+    border-radius:30px;
 
-    border-radius:34px;
-
-    padding:30px;
+    padding:28px;
 
     box-shadow:
-    0 20px 50px rgba(0,0,0,.08);
-
-    border:
-    1px solid rgba(255,255,255,.6);
+    0 10px 30px rgba(0,0,0,.05);
 }
-
-/* 标题 */
 
 .side-title{
 
     font-size:30px;
 
-    font-weight:800;
+    font-weight:700;
 
-    margin-bottom:14px;
-
-    background:
-    linear-gradient(
-    90deg,
-    #2563eb,
-    #7c3aed
-    );
-
-    -webkit-background-clip:text;
-
-    -webkit-text-fill-color:transparent;
+    margin-bottom:22px;
 }
 
-/* 描述 */
-
-.service-desc{
-
-    color:#6b7280;
-
-    font-size:14px;
-
-    line-height:1.8;
-
-    margin-bottom:25px;
-}
-
-/* 联系卡片 */
+/* 联系方式 */
 
 .contact{
 
     display:flex;
 
-    justify-content:space-between;
-
     align-items:center;
 
-    background:
-    rgba(248,250,252,.9);
+    gap:16px;
+
+    background:#f9fafb;
 
     padding:18px;
 
-    border-radius:24px;
+    border-radius:22px;
 
-    margin-bottom:16px;
-
-    transition:.25s;
+    margin-bottom:15px;
 }
 
-/* 悬停 */
-
-.contact:hover{
-
-    transform:
-    translateY(-3px);
-
-    background:white;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.06);
-}
-
-/* 左边 */
-
-.contact-left{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-}
-
-/* 图标 */
+/* 联系图标 */
 
 .contact-icon{
 
-    width:54px;
-    height:54px;
-
-    border-radius:18px;
-
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
-
-    font-size:26px;
-
-    color:white;
+    font-size:34px;
 }
 
-/* QQ */
-
-.qq{
-
-    background:
-    linear-gradient(
-    135deg,
-    #3b82f6,
-    #2563eb
-    );
-}
-
-/* 微信 */
-
-.wechat{
-
-    background:
-    linear-gradient(
-    135deg,
-    #22c55e,
-    #16a34a
-    );
-}
-
-/* 邮箱 */
-
-.email{
-
-    background:
-    linear-gradient(
-    135deg,
-    #f59e0b,
-    #ea580c
-    );
-}
-
-/* 标题 */
+/* 联系标题 */
 
 .contact-name{
-
-    font-size:16px;
 
     font-weight:700;
 
     margin-bottom:5px;
 }
 
-/* 内容 */
+/* 联系内容 */
 
 .contact-value{
 
     color:#6b7280;
-
-    font-size:13px;
-}
-
-/* 右边按钮 */
-
-.contact-btn{
-
-    background:
-    linear-gradient(
-    135deg,
-    #3b82f6,
-    #7c3aed
-    );
-
-    color:white;
-
-    padding:10px 18px;
-
-    border-radius:999px;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    cursor:pointer;
-
-    transition:.2s;
-}
-
-.contact-btn:hover{
-
-    transform:scale(1.05);
 }
 
 /* ～～～～～～～～ 提示区域 ～～～～～～～～ */
@@ -650,6 +507,8 @@ body{
         font-size:12px;
     }
 
+    /* 手机双列 */
+
     .grid{
 
         grid-template-columns:
@@ -657,6 +516,8 @@ body{
 
         gap:8px;
     }
+
+    /* 手机卡片 */
 
     .card{
 
@@ -695,57 +556,6 @@ body{
         font-size:12px;
 
         margin-bottom:6px;
-    }
-
-    .side-card{
-
-        padding:18px;
-
-        border-radius:22px;
-    }
-
-    .side-title{
-
-        font-size:22px;
-    }
-
-    .service-desc{
-
-        font-size:12px;
-    }
-
-    .contact{
-
-        padding:12px;
-
-        border-radius:16px;
-    }
-
-    .contact-icon{
-
-        width:42px;
-        height:42px;
-
-        font-size:20px;
-
-        border-radius:14px;
-    }
-
-    .contact-name{
-
-        font-size:13px;
-    }
-
-    .contact-value{
-
-        font-size:11px;
-    }
-
-    .contact-btn{
-
-        padding:7px 12px;
-
-        font-size:11px;
     }
 }
 
@@ -841,7 +651,7 @@ id="grid"></div>
 
 </div>
 
-<!-- 右侧高级客服 -->
+<!-- 右侧 -->
 
 <div class="sidebar">
 
@@ -849,17 +659,7 @@ id="grid"></div>
 
     <div class="side-title">
 
-        ✨ 专属客服支持
-
-    </div>
-
-    <div class="service-desc">
-
-        7 × 24 小时在线服务
-
-        <br>
-
-        快速响应 · 专属协助 · 稳定售后
+        客服支持
 
     </div>
 
@@ -867,28 +667,20 @@ id="grid"></div>
 
     <div class="contact">
 
-        <div class="contact-left">
-
-            <div class="contact-icon qq">
-                🐧
-            </div>
-
-            <div>
-
-                <div class="contact-name">
-                    QQ 客服
-                </div>
-
-                <div class="contact-value">
-                    1146268509
-                </div>
-
-            </div>
-
+        <div class="contact-icon">
+            🐧
         </div>
 
-        <div class="contact-btn">
-            联系
+        <div>
+
+            <div class="contact-name">
+                联系 QQ
+            </div>
+
+            <div class="contact-value">
+                1146268509
+            </div>
+
         </div>
 
     </div>
@@ -944,6 +736,8 @@ function detectSystem(){
 
     return "🌐 Unknown";
 }
+
+/* 显示系统 */
 
 document.getElementById("system")
 .innerText =
