@@ -537,26 +537,9 @@ body{
 
     .icon{
 
-    width:42px;
+        font-size:28px;
 
-    height:42px;
-
-    border-radius:14px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    margin-bottom:10px;
-
-    font-size:18px;
-
-    color:white;
-
-    font-weight:700;
-    
+        margin-bottom:6px;
     }
 
     .card-title{
@@ -1273,7 +1256,7 @@ const subscriptions = [
 
 {
     name:"龙",
-    icon:"✦",
+    icon:"🚀",
     color:"#3b82f6",
     password:"HYL7008",
     url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/HYL&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
@@ -1281,7 +1264,7 @@ const subscriptions = [
 
 {
     name:"虹",
-    icon:"✧",
+    icon:"⚡",
     color:"#22c55e",
     password:"FYH6268",
     url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/FYH&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
@@ -1289,7 +1272,7 @@ const subscriptions = [
 
 {
     name:"玉",
-    icon:"⬢",
+    icon:"🪐",
     color:"#8b5cf6",
     password:"WXY6425",
     url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/WXY&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
@@ -1297,7 +1280,7 @@ const subscriptions = [
 
 {
     name:"琼",
-    icon:"⬡",
+    icon:"☁️",
     color:"#f59e0b",
     password:"WXQ5954",
     url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/WXQ&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
@@ -1305,7 +1288,7 @@ const subscriptions = [
 
 {
     name:"极",
-    icon:"◈",
+    icon:"🛡️",
     color:"#06b6d4",
     password:"LXS6506",
     url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/LXS&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
@@ -1313,7 +1296,7 @@ const subscriptions = [
 
 {
     name:"琪",
-    icon:"◉",
+    icon:"📶",
     color:"#ec4899",
     password:"HMQ2676",
     url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/HMQ&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
@@ -1321,7 +1304,7 @@ const subscriptions = [
 
 {
     name:"线路 7",
-    icon:"◎",
+    icon:"🌐",
     color:"#3b82f6",
     password:"7777",
     url:"https://example.com/sub7.yaml"
@@ -1329,7 +1312,7 @@ const subscriptions = [
 
 {
     name:"线路 8",
-    icon:"✺",
+    icon:"⭐",
     color:"#eab308",
     password:"8888",
     url:"https://example.com/sub8.yaml"
@@ -1337,7 +1320,7 @@ const subscriptions = [
 
 {
     name:"线路 9",
-    icon:"✹",
+    icon:"🍃",
     color:"#84cc16",
     password:"9999",
     url:"https://example.com/sub9.yaml"
@@ -1345,14 +1328,14 @@ const subscriptions = [
 
 {
     name:"线路 10",
-    icon:"❖",
+    icon:"💎",
     color:"#8b5cf6",
     password:"0000",
     url:"https://example.com/sub10.yaml"
 },
 {
     name:"线路 11",
-    icon:"⌘",
+    icon:"🔥",
     color:"#ef4444",
     password:"1111",
     url:"https://example.com/sub11.yaml"
@@ -1360,7 +1343,7 @@ const subscriptions = [
 
 {
     name:"线路 12",
-    icon:"⌬",
+    icon:"🌙",
     color:"#6366f1",
     password:"2222",
     url:"https://example.com/sub12.yaml"
@@ -1406,13 +1389,9 @@ subscriptions.forEach((item,index)=>{
 
     card.innerHTML = `
 
-<div
-class="icon"
-style="
-background:${item.color};
-">
-    ${item.icon}
-</div>
+    <div class="icon">
+        ${item.icon}
+    </div>
 
     <div class="card-title">
         ${item.name}
