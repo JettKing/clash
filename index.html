@@ -537,9 +537,26 @@ body{
 
     .icon{
 
-        font-size:28px;
+    width:42px;
 
-        margin-bottom:6px;
+    height:42px;
+
+    border-radius:14px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:10px;
+
+    font-size:18px;
+
+    color:white;
+
+    font-weight:700;
+    
     }
 
     .card-title{
@@ -1389,9 +1406,13 @@ subscriptions.forEach((item,index)=>{
 
     card.innerHTML = `
 
-    <div class="icon">
-        ${item.icon}
-    </div>
+<div
+class="icon"
+style="
+background:${item.color};
+">
+    ${item.icon}
+</div>
 
     <div class="card-title">
         ${item.name}
