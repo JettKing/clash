@@ -1389,8 +1389,16 @@ subscriptions.forEach((item,index)=>{
 
     card.innerHTML = `
 
+    <div class="icon">
+        ${item.icon}
+    </div>
+
     <div class="card-title">
         ${item.name}
+    </div>
+
+    <div class="card-desc">
+        自动识别系统导入
     </div>
 
     <button
