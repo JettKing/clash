@@ -221,7 +221,7 @@ body{
     0 10px 25px rgba(0,0,0,.05);
 
     transition:.25s;
-    
+
     text-align:center;
 }
 
@@ -236,7 +236,7 @@ body{
     font-size:56px;
 
     margin-bottom:18px;
-    
+
     display:flex;
 
     justify-content:center;
@@ -528,7 +528,7 @@ body{
 
     .card{
 
-        padding:8px;
+        padding:10px;
 
         border-radius:18px;
 
@@ -562,7 +562,7 @@ body{
 
     .btn{
 
-        padding:4px;
+        padding:7px;
 
         border-radius:10px;
 
@@ -585,7 +585,7 @@ body{
 
     .side-title{
 
-        font-size:20px;
+        font-size:18px;
 
         margin-bottom:12px;
     }
@@ -598,18 +598,18 @@ body{
 
         gap:10px;
 
-        margin-bottom:10px;
+        margin-bottom:8px;
     }
 
-.contact-icon{
+    .contact-icon{
 
-    width:42px;
-    height:42px;
+        width:42px;
+        height:42px;
 
-    font-size:16px;
+        font-size:16px;
 
-    border-radius:12px;
-}
+        border-radius:14px;
+    }
 
     .contact-name{
 
@@ -659,7 +659,7 @@ body{
         </div>
 
         <div class="logo-text">
-            <span><!-- Clash --></span> <!-- 一键导入 -->
+            <span>Clash</span> 一键导入
         </div>
 
     </div>
@@ -731,7 +731,7 @@ body{
             </div>
 
             <div class="contact-value">
-                1146268509
+                <span>1146268509</span>
             </div>
 
         </div>
@@ -751,7 +751,7 @@ body{
             </div>
 
             <div class="contact-value">
-                WX160318999
+                <span>WX160318999</span>
             </div>
 
         </div>
@@ -771,7 +771,9 @@ body{
             </div>
 
             <div class="contact-value">
+                <span>
                 jeanellescarsellacfl55@gmail.com
+                </span>
             </div>
 
         </div>
@@ -870,10 +872,6 @@ function checkInnerBrowser(){
 
     if(isWechat || isQQ){
 
-        /*
-        真正锁死页面
-        */
-
         document.body.style.overflow =
         "hidden";
 
@@ -886,10 +884,6 @@ function checkInnerBrowser(){
         document.documentElement.style.height =
         "100vh";
 
-        /*
-        禁止 iPhone 滑动
-        */
-
         document.addEventListener(
             "touchmove",
             function(e){
@@ -899,10 +893,6 @@ function checkInnerBrowser(){
             },
             { passive:false }
         );
-
-        /*
-        添加遮罩
-        */
 
         document.body.innerHTML += `
 
@@ -946,10 +936,6 @@ function checkInnerBrowser(){
 
         </div>
         `;
-
-        /*
-        样式
-        */
 
         const style =
         document.createElement("style");
@@ -1110,8 +1096,6 @@ function checkInnerBrowser(){
             font-weight:700;
         }
 
-        /* 手机 */
-
         @media(max-width:768px){
 
             .arrow{
@@ -1166,8 +1150,6 @@ function checkInnerBrowser(){
     }
 }
 
-// 执行检测
-
 checkInnerBrowser();
 
 /*
@@ -1189,14 +1171,10 @@ document.addEventListener(
     "keydown",
     function(e){
 
-        // F12
-
         if(e.key === "F12"){
 
             e.preventDefault();
         }
-
-        // Ctrl+U
 
         if(
             e.ctrlKey
@@ -1206,8 +1184,6 @@ document.addEventListener(
 
             e.preventDefault();
         }
-
-        // Ctrl+Shift+I
 
         if(
             e.ctrlKey
@@ -1220,8 +1196,6 @@ document.addEventListener(
             e.preventDefault();
         }
 
-        // Ctrl+Shift+J
-
         if(
             e.ctrlKey
             &&
@@ -1232,8 +1206,6 @@ document.addEventListener(
 
             e.preventDefault();
         }
-
-        // Ctrl+S
 
         if(
             e.ctrlKey
@@ -1256,7 +1228,7 @@ const subscriptions = [
 
 {
     name:"龙",
-    icon:"🚀",
+    icon:"🌐",
     color:"#3b82f6",
     password:"HYL7008",
     url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/HYL&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
@@ -1264,7 +1236,7 @@ const subscriptions = [
 
 {
     name:"虹",
-    icon:"⚡",
+    icon:"🌐",
     color:"#22c55e",
     password:"FYH6268",
     url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/FYH&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
@@ -1272,7 +1244,7 @@ const subscriptions = [
 
 {
     name:"玉",
-    icon:"🪐",
+    icon:"🌐",
     color:"#8b5cf6",
     password:"WXY6425",
     url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/WXY&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
@@ -1280,7 +1252,7 @@ const subscriptions = [
 
 {
     name:"琼",
-    icon:"☁️",
+    icon:"🌐",
     color:"#f59e0b",
     password:"WXQ5954",
     url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/WXQ&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
@@ -1288,7 +1260,7 @@ const subscriptions = [
 
 {
     name:"极",
-    icon:"🛡️",
+    icon:"🌐",
     color:"#06b6d4",
     password:"LXS6506",
     url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/LXS&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
@@ -1296,14 +1268,14 @@ const subscriptions = [
 
 {
     name:"琪",
-    icon:"📶",
+    icon:"🌐",
     color:"#ec4899",
     password:"HMQ2676",
     url:"https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/JettKing/Nodal/refs/heads/main/HMQ&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
 },
 
 {
-    name:"线路 7",
+    name:"7",
     icon:"🌐",
     color:"#3b82f6",
     password:"7777",
@@ -1311,43 +1283,45 @@ const subscriptions = [
 },
 
 {
-    name:"线路 8",
-    icon:"⭐",
+    name:"8",
+    icon:"🌐",
     color:"#eab308",
     password:"8888",
     url:"https://example.com/sub8.yaml"
 },
 
 {
-    name:"线路 9",
-    icon:"🍃",
+    name:"9",
+    icon:"🌐",
     color:"#84cc16",
     password:"9999",
     url:"https://example.com/sub9.yaml"
 },
 
 {
-    name:"线路 10",
-    icon:"💎",
+    name:"10",
+    icon:"🌐",
     color:"#8b5cf6",
     password:"0000",
     url:"https://example.com/sub10.yaml"
 },
+
 {
-    name:"线路 11",
-    icon:"🔥",
+    name:"11",
+    icon:"🌐",
     color:"#ef4444",
     password:"1111",
     url:"https://example.com/sub11.yaml"
 },
 
 {
-    name:"线路 12",
-    icon:"🌙",
+    name:"12",
+    icon:"🌐",
     color:"#6366f1",
     password:"2222",
     url:"https://example.com/sub12.yaml"
 }
+
 ];
 
 /*
@@ -1444,8 +1418,6 @@ function importSub(index){
 
     let scheme = "";
 
-    // iPhone / iPad
-
     if(
 
         /iPhone|iPad|iPod/i.test(ua)
@@ -1469,8 +1441,6 @@ function importSub(index){
         encodeURIComponent(item.url);
     }
 
-    // Android
-
     else if(/Android/i.test(ua)){
 
         scheme =
@@ -1479,8 +1449,6 @@ function importSub(index){
 
         encodeURIComponent(item.url);
     }
-
-    // Windows / macOS
 
     else{
 
