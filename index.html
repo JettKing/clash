@@ -1271,51 +1271,11 @@ function importSub(index){
         return;
     }
 
-    const ua =
-    navigator.userAgent;
-
-    let scheme = "";
-
-    if(
-
-        /iPhone|iPad|iPod/i.test(ua)
-
-        ||
-
-        (
-            navigator.platform === 'MacIntel'
-
-            &&
-
-            navigator.maxTouchPoints > 1
-        )
-
-    ){
-
-        scheme =
-
-        "clash://install-config?url=" +
-
+    const scheme =
+        "clashmi://install-config?name=" +
+        encodeURIComponent("徐胖虎资源社") +
+        "&url=" +
         encodeURIComponent(item.url);
-    }
-
-    else if(/Android/i.test(ua)){
-
-        scheme =
-
-        "clash://install-config?url=" +
-
-        encodeURIComponent(item.url);
-    }
-
-    else{
-
-        scheme =
-
-        "clash://install-config?url=" +
-
-        encodeURIComponent(item.url);
-    }
 
     window.location.href =
     scheme;
